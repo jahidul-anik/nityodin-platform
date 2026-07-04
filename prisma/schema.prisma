@@ -1,0 +1,286 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============ CORE IDENTITY ============
+
+model User {
+  id              String   @id @default(cuid())
+  phone           String   @unique
+  email           String?
+  name            String
+  avatarUrl       String?
+  dateOfBirth     String?
+  gender          String?
+  city            String?
+  district        String?
+  division        String?
+  isPhoneVerified Boolean  @default(false)
+  isNidVerified   Boolean  @default(false)
+  nidNumber       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  roles        UserRole[]
+  wallet       Wallet?
+  orders       Order[]
+  reviews      Review[]
+  products     Product[]
+  services     Service[]
+  appointments Appointment[]
+  reports      MedicalReport[]
+}
+
+model UserRole {
+  id        String   @id @default(cuid())
+  userId    String
+  role      String   // consumer, merchant, farmer, service_provider
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+// ============ DIGITAL WALLET ============
+
+model Wallet {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  balance   Int      @default(0) // in paisa (1 BDT = 100 paisa)
+  isFrozen  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user         User          @relation(fields: [userId], references: [id])
+  transactions Transaction[]
+}
+
+model Transaction {
+  id                    String   @id @default(cuid())
+  walletId              String
+  type                  String   // credit, debit, transfer, escrow_hold, escrow_release
+  amount                Int
+  description           String?
+  referenceType         String?  // order, service, p2p, funding
+  referenceId           String?
+  paymentMethod         String?  // bKash, Nagad, Rocket, wallet, bank
+  status                String   @default("completed") // pending, completed, failed, reversed
+  createdAt             DateTime @default(now())
+
+  wallet Wallet @relation(fields: [walletId], references: [id])
+}
+
+// ============ RETAIL & COMMERCE ============
+
+model Product {
+  id          String   @id @default(cuid())
+  sellerId    String
+  name        String
+  nameBn      String?
+  description String?
+  price       Int      // in paisa
+  category    String
+  subcategory String?
+  imageUrl    String?
+  stock       Int      @default(0)
+  unit        String?  // kg, piece, liter, etc.
+  rating      Float    @default(0)
+  reviewCount Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  seller  User    @relation(fields: [sellerId], references: [id])
+  reviews Review[]
+  orders  OrderItem[]
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String?
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  product  Product? @relation(fields: [productId], references: [id])
+}
+
+model Order {
+  id            String   @id @default(cuid())
+  buyerId       String
+  sellerId      String
+  totalAmount   Int
+  status        String   @default("pending") // pending, confirmed, preparing, delivered, cancelled
+  paymentStatus String   @default("pending") // pending, paid, failed
+  paymentMethod String?
+  deliveryType  String?  // home_delivery, pickup, direct
+  deliveryAddress String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  buyer   User       @relation("BuyerOrders", fields: [buyerId], references: [id])
+  seller  User       @relation("SellerOrders", fields: [sellerId], references: [id])
+  items   OrderItem[]
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Int
+
+  order   Order   @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+}
+
+// ============ AGRICULTURE ============
+
+model FarmProduct {
+  id          String   @id @default(cuid())
+  farmerId    String
+  name        String
+  nameBn      String?
+  description String?
+  price       Int
+  unit        String?
+  category    String
+  imageUrl    String?
+  quantity    Float   @default(0)
+  origin      String?
+  isOrganic   Boolean  @default(false)
+  harvestDate String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  farmer User @relation(fields: [farmerId], references: [id])
+}
+
+model MarketPrice {
+  id        String   @id @default(cuid())
+  commodity String
+  price     Int      // per kg in paisa
+  unit      String   @default("kg")
+  change    Float?   // percentage change
+  date      String
+  market    String?
+  createdAt DateTime @default(now())
+}
+
+// ============ SERVICES ============
+
+model Service {
+  id            String   @id @default(cuid())
+  providerId    String
+  name          String
+  nameBn        String?
+  description   String?
+  category      String
+  subcategory   String?
+  priceType     String   @default("fixed") // fixed, hourly, quote
+  basePrice     Int?
+  imageUrl      String?
+  rating        Float    @default(0)
+  reviewCount   Int      @default(0)
+  isAvailable   Boolean  @default(true)
+  serviceType   String?  // in_venue, at_customer, both
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  provider User @relation(fields: [providerId], references: [id])
+}
+
+model ServiceRequest {
+  id            String   @id @default(cuid())
+  customerId    String
+  providerId    String
+  serviceId     String
+  status        String   @default("pending") // pending, accepted, in_progress, completed, cancelled
+  scheduledDate String?
+  scheduledTime String?
+  address       String?
+  notes         String?
+  quotedPrice   Int?
+  finalPrice    Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ============ MEDICAL HUB ============
+
+model MedicalReport {
+  id            String   @id @default(cuid())
+  userId        String
+  title         String
+  reportType    String   // blood_test, xray, ultrasound, etc.
+  labName       String?
+  reportDate    String?
+  findings      String?
+  doctorName    String?
+  imageUrl      String?
+  isShared      Boolean  @default(false)
+  sharedWithId  String?
+  sharedUntil   String?
+  createdAt     DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Doctor {
+  id          String   @id @default(cuid())
+  name        String
+  specialty   String
+  qualification String?
+  hospital    String?
+  city        String?
+  rating      Float    @default(0)
+  fee         Int?
+  imageUrl    String?
+  availableSlots Int   @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Appointment {
+  id          String   @id @default(cuid())
+  userId      String
+  doctorId    String
+  date        String
+  time        String
+  status      String   @default("scheduled") // scheduled, completed, cancelled
+  notes       String?
+  createdAt   DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  doctor Doctor @relation(fields: [doctorId], references: [id])
+}
+
+// ============ BUSINESS LOCATION ============
+
+model BusinessLocation {
+  id              String   @id @default(cuid())
+  ownerId         String
+  businessName    String
+  category        String
+  subcategories   String?  // JSON array as string
+  address         String
+  area            String?
+  city            String
+  district        String
+  division        String
+  latitude        Float?
+  longitude       Float?
+  rating          Float    @default(0)
+  isOpen          Boolean  @default(true)
+  phone           String?
+  createdAt       DateTime @default(now())
+
+  owner User @relation(fields: [ownerId], references: [id])
+}

@@ -1,0 +1,2002 @@
+     1→Project Vision: A Citizen-Centric Omnichannel Ecosystem
+     2→
+     3→I am conceptualizing a centralized, omnichannel Point-of-Sale (PoS) and e-commerce ecosystem designed to unite merchants, service providers, and consumers on a single, unified platform. Operating on a Hybrid PaaS backend with a suite of user-friendly SaaS frontends, this platform functions much like a Google account: users log in once to access a vast, interconnected network of distinct services and products.
+     4→
+     5→Core Innovation: "Single Identity, Multiple Roles" Our primary goal is to build a unified, citizen-centric digital public infrastructure that leverages Bangladesh's mature Mobile Financial Services (MFS) ecosystem. The standout feature is our "Single Identity, Multiple Roles" model. Unlike fragmented apps that require separate accounts, a user maintains one verified identity and one unified wallet. With this single account, a citizen can seamlessly switch between SaaS interfaces to buy groceries in the morning (Consumer), sell farm produce in the afternoon (Merchant), and accept plumbing jobs in the evening (Service Provider).
+     6→
+     7→Architectural Framework: The "Spider Web" Model Architecturally, the platform resembles a spider web. At the central hub sits the user's verified identity and digital wallet. Radiating from this core are six specialized segments designed to address fundamental citizen needs:
+     8→
+     9→Supply Chain & Agriculture
+    10→Retail & Community Shops
+    11→Business Services
+    12→Domestic Services
+    13→Diagnostic & Medical Hub
+    14→Digital Wallet & Payments
+    15→
+    16→Value Proposition & Key Features For existing offline business owners, this ecosystem acts as a bridge, instantly expanding their reach to a massive online consumer base while streamlining their traditional operations. To connect these users, our web and mobile applications will feature an interactive, live-location-based map. Users can discover and filter available products and services within a specific radius (e.g., 100km) or scale their search by town, district, or state. Also, we had to give the business holder synchronize inventory system for both online and offline sell & inventory.
+    17→
+    18→Citizen-Centric Features
+    19→For Supply Chain & Agriculture
+    20→
+    21→Purpose: Eliminate exploitative middlemen by connecting farmers directly to consumers and retailers, while providing full traceability from farm to table.
+    22→Key Citizen Features:
+    23→•    Direct Farm-to-Consumer Listings: Farmers create product listings with photos, descriptions, and prices in under two minutes using a mobile-optimized interface designed for varying digital literacy levels.
+    24→•    Supply Chain Transparency: Every product displays its origin, handling history, and chain of custody. Consumers see exactly where their food comes from and how it traveled.
+    25→•    Fair Price Discovery: Real-time market price indicators help farmers set competitive prices while ensuring they retain 70-85% of the selling price instead of 27-46%.
+    26→•    Flexible Fulfillment Options: Buyers choose home delivery, nearest Hub pickup, or direct farm collection -- whichever suits their location and schedule.
+    27→•    Offline Listing Capability: Farmers in areas with intermittent connectivity can create listings offline; the app syncs automatically when connection restores.
+    28→Citizen Benefit:
+    29→Farmers increase household income by 50-100% through direct sales. Consumers access fresher produce at lower prices by eliminating intermediary markups. The entire agricultural ecosystem becomes more transparent, efficient, and equitable.
+    30→
+    31→For Retail & Community Commerce
+    32→Purpose: Digitize neighborhood shops and community retailers, enabling hyper-local digital commerce with same-day delivery from trusted local businesses.
+    33→Key Citizen Features:
+    34→•    Community Shop Digital Storefront: Local shop owners create digital catalogs of their inventory, making products discoverable to nearby consumers without building a website or managing complex e-commerce tools.
+    35→•    Smart Location-Based Discovery: Consumers automatically see products available from shops within their neighborhood, prioritized by distance and delivery time.
+    36→•    Real-Time Inventory Visibility: Community shop stock levels update in real-time, preventing consumers from visiting shops for out-of-stock items.
+    37→•    Instant Community Delivery: Orders from nearby community shops can be fulfilled within 30-60 minutes by local delivery partners.
+    38→•    Digital Payment Integration: Shops accept Nityodin wallet payments, bKash, Nagad, and Rocket -- eliminating cash handling risks and enabling better record-keeping.
+    39→Citizen Benefit:
+    40→Community shops increase sales and customer reach without physical expansion. Consumers enjoy the convenience of online ordering with the trust of local businesses they already know. Neighborhood economies strengthen as spending circulates within communities.
+    41→
+    42→For Business Services
+    43→Purpose: Create a verified marketplace for business-oriented services -- automobile repair, beauty and wellness, homemade food, and professional consulting -- with transparent pricing and quality assurance.
+    44→Key Citizen Features:
+    45→•    Verified Service Provider Profiles: Every provider undergoes NID verification and skill validation. Profiles include work samples, customer ratings, and service history.
+    46→•    Transparent Pricing Models: Providers specify pricing upfront -- hourly rates, fixed fees, or inspection-based quotes -- eliminating surprise charges.
+    47→•    Appointment Booking System: Consumers book time slots that fit their schedule, with automatic reminders and rescheduling options.
+    48→•    In-Venue and Home Service Options: Providers specify whether they work at their venue, at client locations, or both -- giving consumers flexibility.
+    49→•    Service History & Reviews: Complete transaction history with verified customer reviews builds provider reputation and helps consumers make informed choices.
+    50→Citizen Benefit:
+    51→Service providers gain steady income streams and professional credibility through verified reviews. Consumers access quality-assured services with price transparency and scheduling convenience. The informal service economy formalizes, creating protections for both sides.
+    52→
+    53→For Domestic Services
+    54→Purpose: Provide instant, reliable access to essential household services -- plumbing, electrical work, emergency automobile rescue -- with GPS-based provider matching and real-time communication.
+    55→Key Citizen Features:
+    56→•    Emergency Dispatch System: Urgent requests (burst pipes, electrical failures, vehicle breakdowns) receive priority matching the nearest available qualified provider.
+    57→•    GPS-Based Provider Matching: The platform identifies verified providers within a configurable radius, considering geographic proximity, traffic conditions, and provider availability.
+    58→•    Live Availability Toggle: Service providers indicate real-time availability with a simple switch, broadcasting their status to nearby consumers instantly.
+    59→•    In-App Communication: Built-in messaging and WhatsApp integration enable direct coordination between consumers and providers before arrival.
+    60→•    Rate Negotiation & Invoicing: Providers and consumers agree on pricing through the app, with automatic invoice generation and payment processing.
+    61→Citizen Benefit:
+    62→Household emergencies are resolved faster with verified professionals’ minutes away. Service providers maximize earnings by filling gaps between scheduled appointments. Communities gain a reliable safety net for essential maintenance and repair needs.
+    63→
+    64→For Diagnostic & Medical Hub
+    65→Purpose: Create Bangladesh's first centralized medical report archive with secure doctor sharing, plus integrated appointment booking for partnered diagnostic centers and clinics.
+    66→Key Citizen Features:
+    67→•    Centralized Report Archive: All diagnostic reports from partnered labs are stored securely in one place, accessible anytime via mobile app. Patients no longer carry paper reports or repeat tests due to lost records.
+    68→•    Time-Boxed Secure Sharing: Patients grant doctors access to specific reports for a configurable period (default 7 days). Access automatically expires, ensuring privacy protection.
+    69→•    QR Code Digital Tokens: Patients generate QR codes for clinic check-in, eliminating paperwork and enabling instant report retrieval by authorized medical staff.
+    70→•    Manual Upload for Legacy Reports: Users can scan and upload physical reports from non-partnered labs, creating a complete health history over time.
+    71→•    Doctor Discovery & Booking: Search for specialists by location, availability, and expertise, with direct appointment scheduling through the platform.
+    72→•    Health Dashboard: Chronological timeline of all medical documents, upcoming appointments, and recent test results with notifications when new reports are available.
+    73→Citizen Benefit:
+    74→Patients enjoy continuity of care with permanent access to their complete medical history. Doctor consultations become more efficient with instant report access. Diagnostic centers streamline operations through digital integration. Healthcare outcomes improve through better information flow between patients and providers.
+    75→
+    76→For Digital Wallet & Payments
+    77→Purpose: Provide a unified BDT-denominated digital wallet that integrates with Bangladesh's dominant MFS providers, enabling seamless payments across all Nityodin modules with built-in transaction security.
+    78→Key Citizen Features:
+    79→•    Multi-Gateway Integration: Wallet funding via bKash (39.9% market share), Nagad (18.1%), Rocket (11.7%), and direct bank transfers -- citizens use their preferred payment method.
+    80→•    Escrow Protection for Services: Service payments are held in escrow until work completion, protecting both consumers and providers from payment disputes.
+    81→•    Instant P2P Transfers: Citizens send money to friends, family, or business contacts instantly within the Nityodin ecosystem at no cost.
+    82→•    Transaction History & Statements: Complete financial activity log with exportable statements for personal accounting and tax purposes.
+    83→•    Low-Balance Auto Top-Up: Optional automatic wallet funding when balance falls below a user-defined threshold, ensuring uninterrupted service usage.
+    84→Citizen Benefit:
+    85→A single wallet serves all platform needs -- shopping, services, healthcare, and transfers -- eliminating the need to manage multiple payment apps. Escrow protection builds trust between strangers. Integration with familiar MFS providers means no learning curve for Bangladeshi citizens already using bKash, Nagad, or Rocket.
+    86→
+    87→Request for Consultation Based on this vision, I am seeking comprehensive advice on the technical architecture, backend/frontend engineering strategies, and UI/UX design principles required to bring this ecosystem to life.  Show full message
+    88→The user is presenting a comprehensive vision for a citizen-centric omnichannel ecosystem in Bangladesh, similar to a "super app" concept. They're asking for consultation on:
+    89→
+    90→
+    91→
+    92→
+    93→I'll help you develop a comprehensive technical and strategic roadmap for this ambitious omnichannel ecosystem. Let me research current best practices and similar platforms to provide you with actionable architectural guidance.
+    94→
+    95→Web Search
+    96→omnichannel PaaS SaaS platform architecture microservices Bangladesh fintech
+    97→Web Search
+    98→super app architecture single identity multiple roles user management system
+    99→Web Search
+   100→bKash Nagad Rocket MFS API integration Bangladesh payment gateway
+   101→Good, I'm getting some useful information about:
+   102→
+   103→
+   104→Web Search
+   105→location-based marketplace architecture GPS radius search real-time inventory
+   106→Web Search
+   107→offline-first mobile app architecture sync intermittent connectivity farming
+   108→Web Search
+   109→multi-role user interface design UX citizen-centric platform accessibility
+   110→Great! I'm gathering good information. Let me search for a few more specific topics to make the consultation comprehensive:
+   111→
+   112→Web Search
+   113→real-time inventory synchronization online offline POS system architecture
+   114→Web Search
+   115→PostGIS geospatial database location radius search performance optimization
+   116→Web Search
+   117→Bangladesh digital payment regulations compliance fintech security requirements
+   118→Excellent! I now have comprehensive research on:
+   119→
+   120→
+   121→
+   122→🎯 Comprehensive Technical Consultation: Nityodin Omnichannel Ecosystem
+   123→Executive Summary
+   124→Based on your vision for a citizen-centric "Single Identity, Multiple Roles" platform in Bangladesh, I've conducted extensive research into similar super app architectures, payment integration patterns, and location-based marketplace designs. Below is my comprehensive technical roadmap covering architecture, engineering strategies, UI/UX principles, and implementation considerations.
+   125→
+   126→1. 🏗️ RECOMMENDED TECHNICAL ARCHITECTURE
+   127→A. Hybrid PaaS Backend Architecture (The "Spider Web" Model)
+   128→Based on research into successful super apps like WeChat, Alipay, and Grab, here's the recommended architecture:
+   129→
+   130→Core Architecture Layers:
+   131→text
+   132→
+   133→┌─────────────────────────────────────────────────────────────┐
+   134→│                    PRESENTATION LAYER                        │
+   135→│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐   │
+   136→│  │ Mobile   │ │  Web     │ │  Admin   │ │  Partner     │   │
+   137→│  │ App      │ │  Portal  │ │  Dashboard│ │  Integrations│   │
+   138→│  └──────────┘ └──────────┘ └──────────┘ └──────────────┘   │
+   139→├─────────────────────────────────────────────────────────────┤
+   140→│                    API GATEWAY LAYER                         │
+   141→│  • Authentication & Authorization (OAuth 2.0 / OIDC)        │
+   142→• Rate Limiting & Throttling
+   143→│  • Request Routing & Load Balancing                          │
+   144→│  • API Versioning Management                                 │
+   145→├─────────────────────────────────────────────────────────────┤
+   146→│                 MICROSERVICES LAYER (6 Domains)              │
+   147→│  ┌─────────────────┐  ┌─────────────────┐                   │
+   148→│  │ Identity & Auth │  │ Digital Wallet  │                   │
+   149→│  │ Service         │  │ Service         │                   │
+   150→│  └─────────────────┘  └─────────────────┘                   │
+   151→│  ┌─────────────────┐  ┌─────────────────┐                   │
+   152→│  │ Supply Chain    │  │ Retail & Comm.  │                   │
+   153→│  │ & Agriculture   │  │ Commerce        │                   │
+   154→│  └─────────────────┘  └─────────────────┘                   │
+   155→│  ┌─────────────────┐  ┌─────────────────┐                   │
+   156→│  │ Business Svc    │  │ Domestic Svc    │                   │
+   157→│  │ Marketplace     │  │ Marketplace     │                   │
+   158→│  └─────────────────┘  └─────────────────┘                   │
+   159→│  ┌─────────────────┐  ┌─────────────────┐                   │
+   160→│  │ Diagnostic &    │  │ Location-Based  │                   │
+   161→│  │ Medical Hub     │  │ Discovery       │                   │
+   162→│  └─────────────────┘  └─────────────────┘                   │
+   163→├─────────────────────────────────────────────────────────────┤
+   164→│                    DATA LAYER                                │
+   165→│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐        │
+   166→│  │ PostgreSQL + │ │   Redis      │ │ Elasticsearch│        │
+   167→│  │ PostGIS      │ │  (Cache)     │ │  (Search)    │        │
+   168→│  └──────────────┘ └──────────────┘ └──────────────┘        │
+   169→│  ┌──────────────┐ ┌──────────────┐                         │
+   170→│  │  MongoDB     │ │ MinIO/S3     │                         │
+   171→│  │ (Documents)  │ │ (Media)      │                         │
+   172→│  └──────────────┘ └──────────────┘                         │
+   173→└─────────────────────────────────────────────────────────────┘
+   174→B. Technology Stack Recommendations
+   175→Backend Services:
+   176→Primary Language: Node.js (TypeScript) or Go (for high-performance services)
+   177→Framework: NestJS (Node.js) or Gin (Go)
+   178→Database:
+   179→PostgreSQL with PostGIS extension - Critical for your location-based features (radius search, geo-queries)
+   180→Redis - Caching, session management, real-time data
+   181→MongoDB - Flexible schema for varied merchant/service provider profiles
+   182→Message Queue: Apache Kafka or RabbitMQ (for async processing, event-driven architecture)
+   183→Search Engine: Elasticsearch (for product/service discovery)
+   184→Frontend Technologies:
+   185→Mobile Apps: React Native or Flutter (cross-platform, single codebase)
+   186→Recommendation: Flutter for better performance in low-bandwidth scenarios
+   187→Web Application: Next.js (React-based, SSR support for SEO)
+   188→Admin Dashboard: React + Ant Design or Material-UI
+   189→Infrastructure:
+   190→Cloud Provider: AWS (best Bangladesh connectivity) or Google Cloud Platform
+   191→Containerization: Docker + Kubernetes (K8s)
+   192→API Gateway: Kong or AWS API Gateway
+   193→CDN: Cloudflare (global edge caching for static assets)
+   194→2. 🔐 SINGLE IDENTITY & MULTI-ROLE SYSTEM DESIGN
+   195→A. Centralized Identity Architecture
+   196→Based on research into multi-app user management systems:
+   197→
+   198→javascript
+   199→
+   200→// Example User Schema Design
+   201→{
+   202→  userId: "UUID",
+   203→  primaryIdentity: {
+   204→    nidNumber: "encrypted",
+   205→    phone: "+8801XXXXXXXXX",
+   206→    email: "user@example.com",
+   207→    verifiedStatus: true,
+   208→    verificationMethod: ["NID", "BIOMETRIC", "MFS_LINKED"]
+   209→  },
+   210→  roles: [
+   211→    {
+   212→      roleId: "consumer",
+   213→      permissions: ["browse", "purchase", "review", "wallet_access"],
+   214→      active: true
+   215→    },
+   216→    {
+   217→      roleId: "merchant",
+   218→      permissions: ["list_products", "manage_inventory", "view_analytics"],
+   219→      businessProfile: { /* merchant details */ },
+   220→      active: true
+   221→    },
+   222→    {
+   223→      roleId: "service_provider",
+   224→      permissions: ["accept_jobs", "set_availability", "receive_payments"],
+   225→      serviceCategories: ["plumbing", "electrical"],
+   226→      verificationLevel: "verified_with_samples"
+   227→    }
+   228→  ],
+   229→  unifiedWallet: {
+   230→    walletId: "linked_wallet_id",
+   231→    balance: 0,
+   232→    currency: "BDT"
+   233→  }
+   234→}
+   235→B. Role Switching Mechanism
+   236→Implementation Strategy:
+   237→
+   238→Context-Aware Interface: Detect current role based on user action
+   239→Role Dashboard: Separate home screens for each role
+   240→Unified Navigation: Bottom tab bar showing role-specific modules
+   241→Seamless Transition: One-tap role switching without re-authentication
+   242→Authentication Flow:
+   243→
+   244→SSO (Single Sign-On): JWT tokens with role claims
+   245→Session Management: Centralized session store (Redis)
+   246→Permission Engine: RBAC (Role-Based Access Control) + ABAC (Attribute-Based) hybrid model
+   247→3. 💳 DIGITAL WALLET & PAYMENT INTEGRATION ARCHITECTURE
+   248→A. Multi-Gateway Payment System
+   249→Based on Bangladesh's MFS ecosystem research:
+   250→
+   251→Fund Wallet
+   252→
+   253→Receive Payment
+   254→
+   255→P2P Transfer
+   256→
+   257→Escrow Hold
+   258→
+   259→Release on Completion
+   260→
+   261→Nityodin Wallet
+   262→
+   263→Payment Gateway Aggregator
+   264→
+   265→bKash Checkout API
+   266→
+   267→Nagad Payment Gateway
+   268→
+   269→Rocket Payment
+   270→
+   271→Bank Transfer - SSLCommerz/ShurjoPay
+   272→
+   273→User
+   274→
+   275→Merchant
+   276→
+   277→Escrow Service
+   278→
+   279→B. Recommended Integration Approach
+   280→Option 1: Direct MFS API Integration
+   281→
+   282→bKash: bKash Checkout API (PGW - Payment Gateway)
+   283→Nagad: Nagad Payment Gateway API
+   284→Rocket: DBBL Mobile Banking API
+   285→Pros: Lower transaction fees, direct control
+   286→Cons: Complex integration, multiple compliance requirements
+   287→Option 2: Aggregator Approach (RECOMMENDED for MVP)
+   288→
+   289→Use SSLCommerz, ShurjoPay, or Portwallet as aggregator
+   290→Single integration point supporting all MFS providers
+   291→Faster time-to-market (2-4 weeks vs 2-3 months)
+   292→Handles compliance, reconciliation, and webhook management
+   293→C. Wallet Security Features
+   294→Critical Implementations:
+   295→
+   296→Two-Factor Authentication (2FA): SMS OTP + Biometric (fingerprint/face)
+   297→Transaction Signing: Digital signature for each transaction
+   298→Fraud Detection: ML-based anomaly detection (velocity checks, amount thresholds)
+   299→Encryption: AES-256 for data at rest, TLS 1.3 for data in transit
+   300→Audit Trails: Immutable transaction logs (blockchain optional for high-value)
+   301→4. 📍 LOCATION-BASED DISCOVERY SYSTEM
+   302→A. Geospatial Database Architecture
+   303→Why PostGIS is Essential for Your Platform:
+   304→
+   305→PostGIS provides the spatial database capabilities needed for:
+   306→
+   307→Radius Search: Find merchants/services within X km
+   308→Geo-fencing: Location-based promotions and availability
+   309→Route Optimization: Delivery path planning
+   310→Proximity Ranking: Sort results by distance
+   311→Database Schema Example:
+   312→
+   313→sql
+   314→
+   315→-- Enable PostGIS extension
+   316→CREATE EXTENSION IF NOT EXISTS postgis;
+   317→
+   318→-- Merchants/Service Providers table with location
+   319→CREATE TABLE service_providers (
+   320→    id UUID PRIMARY KEY,
+   321→    user_id UUID REFERENCES users(id),
+   322→    business_name VARCHAR(255),
+   323→    category VARCHAR(100),
+   324→    location GEOGRAPHY(POINT, 4326),  -- SRID 4326 for GPS coordinates
+   325→    service_radius_km INTEGER DEFAULT 50,
+   326→    rating DECIMAL(3,2),
+   327→    is_available BOOLEAN DEFAULT true,
+   328→    created_at TIMESTAMP DEFAULT NOW()
+   329→);
+   330→
+   331→-- Create spatial index for fast radius queries
+   332→CREATE INDEX idx_sp_location ON service_providers USING GIST (location);
+   333→
+   334→-- Radius search query example (find plumbers within 10km)
+   335→SELECT id, business_name, rating, 
+   336→       ST_Distance(location, ST_MakePoint(90.4125, 23.8103)::geography) AS distance_meters
+   337→FROM service_providers 
+   338→WHERE category = 'plumbing'
+   339→  AND is_available = true
+   340→  AND ST_DWithin(
+   341→      location, 
+   342→      ST_MakePoint(90.4125, 23.8103)::geography,  -- User's location (Dhaka)
+   343→      10000  -- 10km radius in meters
+   344→  )
+   345→ORDER BY distance_meters
+   346→LIMIT 20;
+   347→B. Real-Time Location Tracking
+   348→For Service Providers (Domestic Services):
+   349→
+   350→Architecture Components:
+   351→
+   352→Mobile SDK: Background location updates (every 30-60 seconds when active)
+   353→WebSocket Server: Real-time location streaming to consumers
+   354→Geohashing: Efficient spatial indexing for proximity matching
+   355→Redis Geo: In-memory geospatial data for sub-second queries
+   356→Performance Targets:
+   357→
+   358→Query Latency: < 200ms for radius searches
+   359→Update Frequency: Every 5 seconds for active jobs
+   360→Concurrent Users: Support 50,000+ simultaneous location updates
+   361→5. 📱 OFFLINE-FIRST MOBILE ARCHITECTURE (CRITICAL FOR FARMERS)
+   362→A. Why Offline-First is Non-Negotiable
+   363→Research shows that rural Bangladesh has intermittent connectivity. Your agricultural module must work offline.
+   364→
+   365→B. Offline-First Architecture Pattern
+   366→text
+   367→
+   368→┌─────────────────────────────────────────────┐
+   369→│              MOBILE APP LAYER               │
+   370→│  ┌─────────────────────────────────────┐    │
+   371→│  │           UI Layer                  │    │
+   372→│  └─────────────────────────────────────┘    │
+   373→│  ┌─────────────────────────────────────┐    │
+   374→│  │     Repository Pattern              │    │
+   375→│  │  - Abstracts data source            │    │
+   376→│  └─────────────────────────────────────┘    │
+   377→│  ┌─────────────────────────────────────┐    │
+   378→│  │     Local Database (SQLite/Room)    │    │
+   379→│  │  - Source of truth when offline     │    │
+   380→│  └─────────────────────────────────────┘    │
+   381→│  ┌─────────────────────────────────────┐    │
+   382→│  │     Sync Engine                     │    │
+   383→│  │  - Conflict resolution (CRDTs)      │    │
+   384→│  │  - Queue operations                 │    │
+   385→│  │  - Background sync                  │    │
+   386→│  └─────────────────────────────────────┘    │
+   387→└─────────────────────────────────────────────┘
+   388→          ↕ Sync when online
+   389→┌─────────────────────────────────────────────┐
+   390→│            BACKEND API SERVER               │
+   391→│  - Receives synced data                     │
+   392→│  - Resolves conflicts                       │
+   393→│  - Pushes updates to other clients          │
+   394→└─────────────────────────────────────────────┘
+   395→C. Key Implementation Features
+   396→For Farmers' Offline Listing Capability:
+   397→
+   398→Local Data Storage:
+   399→Android: Room Database (SQLite wrapper)
+   400→iOS: Core Data or SQLite.swift
+   401→Flutter: Drift (sqflite) or Hive (NoSQL)
+   402→Offline Operations Supported:
+   403→✅ Create product listings (photos stored locally)
+   404→✅ Edit listings
+   405→✅ View previous orders/messages
+   406→✅ Draft responses to buyer inquiries
+   407→❌ Real-time price updates (synced when online)
+   408→Sync Strategy:
+   409→dart
+   410→
+   411→// Pseudocode for sync logic
+   412→class SyncEngine {
+   413→  Future<void> syncWhenOnline() async {
+   414→    // 1. Push pending local changes
+   415→    await pushPendingListings();
+   416→    
+   417→    // 2. Pull latest data from server
+   418→    await pullLatestOrders();
+   419→    await pullPriceUpdates();
+   420→    
+   421→    // 3. Resolve conflicts (Last-Write-Wins or custom logic)
+   422→    await resolveConflicts();
+   423→    
+   424→    // 4. Notify user of sync status
+   425→    showSyncCompleteNotification();
+   426→  }
+   427→}
+   428→Conflict Resolution Strategies:
+   429→Last-Write-Wins (LWW): Simplest, acceptable for most cases
+   430→CRDTs (Conflict-free Replicated Data Types): For complex collaborative editing
+   431→Manual Resolution: Prompt user when conflicts detected (for critical data like pricing)
+   432→6. 🔄 REAL-TIME INVENTORY SYNCHRONIZATION
+   433→A. Omnichannel POS Architecture
+   434→Based on research into modern POS systems:
+   435→
+   436→Architecture Pattern: Event-Driven Inventory Sync
+   437→
+   438→text
+   439→
+   440→┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+   441→│ Online Store │     │  Physical    │     │  Mobile App  │
+   442→│  (E-commerce)│     │  POS Terminal│     │  (Consumer)  │
+   443→└──────┬───────┘     └──────┬───────┘     └──────┬───────┘
+   444→       │                    │                    │
+   445→       ▼                    ▼                    ▼
+   446→┌──────────────────────────────────────────────────────┐
+   447→│              EVENT BUS (Kafka/RabbitMQ)             │
+   448→│  - order_placed                                     │
+   449→│  - inventory_updated                                │
+   450→│  - stock_adjustment                                 │
+   451→└──────────────────────┬─────────────────────────────┘
+   452→                       │
+   453→                       ▼
+   454→┌──────────────────────────────────────────────────────┐
+   455→│           INVENTORY SERVICE (Single Source of Truth) │
+   456→│                                                       │
+   457→│  - Real-time stock levels                             │
+   458→│  - Reserved inventory (cart reservations)             │
+   459→│  - Low-stock alerts                                   │
+   460→│  - Multi-location support                            │
+   461→└──────────────────────────────────────────────────────┘
+   462→                       │
+   463→                       ▼
+   464→┌──────────────────────────────────────────────────────┐
+   465→│              POSTGRESQL DATABASE                     │
+   466→│  Table: inventory_items                              │
+   467→│  - item_id, location_id, quantity, reserved_qty,     │
+   468→│    last_updated, version (optimistic locking)        │
+   469→└──────────────────────────────────────────────────────┘
+   470→B. Synchronization Logic
+   471→Key Challenges & Solutions:
+   472→
+   473→Race Conditions:
+   474→Use optimistic locking (version numbers)
+   475→Example: Two customers buy last item simultaneously → First succeeds, second gets "out of stock" notification
+   476→Offline POS Scenarios:
+   477→Local inventory cache at shop level
+   478→Async sync queue when connection restores
+   479→Manual reconciliation dashboard for conflicts
+   480→Real-Time Visibility:
+   481→WebSocket connections for live stock updates
+   482→Redis pub/sub for instant cache invalidation across nodes
+   483→Polling fallback (every 5 seconds) for poor connectivity
+   484→Code Example (Optimistic Locking):
+   485→
+   486→sql
+   487→
+   488→-- Update inventory with optimistic locking
+   489→UPDATE inventory_items 
+   490→SET quantity = quantity - 1,
+   491→    version = version + 1,
+   492→    last_updated = NOW()
+   493→WHERE item_id = 'product_123' 
+   494→  AND location_id = 'shop_456'
+   495→  AND version = 5  -- Current version
+   496→  AND (quantity - 1) >= 0;  -- Prevent negative stock
+   497→
+   498→-- Check if update succeeded
+   499→IF row_count = 0 THEN
+   500→  -- Either version mismatch (concurrent edit) or out of stock
+   501→  RAISE EXCEPTION 'Item unavailable or concurrent modification';
+   502→END IF;
+   503→7. 🎨 UI/UX DESIGN PRINCIPLES FOR CITIZEN-CENTRIC PLATFORM
+   504→A. Multi-Role Interface Design
+   505→Based on government UX best practices:
+   506→
+   507→Core Principles:
+   508→
+   509→Progressive Disclosure:
+   510→Show only role-relevant information
+   511→Advanced options hidden behind expandable sections
+   512→Reduces cognitive load for novice users
+   513→Consistent Mental Model:
+   514→Similar interaction patterns across all 6 modules
+   515→Unified navigation structure
+   516→Predictable behavior builds trust
+   517→Accessibility-First Design:
+   518→WCAG 2.1 AA compliance minimum
+   519→Support for screen readers (VoiceOver/TalkBack)
+   520→High contrast mode for outdoor visibility
+   521→Large touch targets (minimum 44x44 pixels)
+   522→B. Role-Specific UX Considerations
+   523→For Farmers (Low Digital Literacy):
+   524→Icon-heavy interfaces with minimal text
+   525→Voice input support for Bengali language listing creation
+   526→Photo-first listing flow: Snap photo → Auto-fill basics → Publish
+   527→Bengali localization throughout (not just translation, but cultural adaptation)
+   528→Tutorial overlays with video demonstrations
+   529→Error prevention: Confirm destructive actions clearly
+   530→For Urban Consumers:
+   531→Fast, gesture-driven navigation
+   532→Saved preferences and quick reorder
+   533→Comparison tools across merchants
+   534→Real-time tracking maps for deliveries/services
+   535→Push notifications for deals and order updates
+   536→For Service Providers:
+   537→Toggle-based availability (one tap to go online/offline)
+   538→Job cards with clear payout info
+   539→In-app navigation to customer location
+   540→Quick invoice generation
+   541→Rating and review display to build reputation
+   542→C. Information Architecture
+   543→Recommended Navigation Structure:
+   544→
+   545→text
+   546→
+   547→Bottom Tab Bar (Always Visible):
+   548→├── Home (Context-aware based on active role)
+   549→├── Discover (Map view + List view toggle)
+   550→├── Orders/Jobs (Role-specific: Orders if consumer, Jobs if provider)
+   551→├── Wallet (Unified across roles)
+   552→└── Profile (Role switcher + Settings)
+   553→
+   554→Role Switcher (Top-left corner):
+   555→┌─────────────────────┐
+   556→│ 👤 Switch Role       │
+   557→├─────────────────────┤
+   558→│ 🛒 Consumer         │
+   559→│ 🏪 Merchant         │
+   560→│ 🔧 Service Provider │
+   561→│ 🚜 Farmer           │
+   562→└─────────────────────┘
+   563→D. Map-Centric Discovery Experience
+   564→Design Specifications:
+   565→
+   566→Default View: Interactive map centered on user's location
+   567→Clustering: Group nearby pins to reduce clutter (zoom to expand)
+   568→Filters:
+   569→Category (groceries, plumbing, diagnostics, etc.)
+   570→Distance slider (1km, 5km, 10km, 25km, 100km)
+   571→Rating threshold
+   572→Availability (open now)
+   573→Cards: Swipe-up from bottom to see list view with map preview
+   574→Detail View: Merchant/provider profile with photos, reviews, services
+   575→Performance Optimizations:
+   576→
+   577→Viewport-based loading: Only fetch markers visible on screen
+   578→Debounced search: 300ms delay after typing stops
+   579→Cached map tiles: Store frequently viewed areas locally
+   580→Progressive loading: Show placeholder while data loads
+   581→8. 🔒 SECURITY & COMPLIANCE FOR BANGLADESH MARKET
+   582→A. Regulatory Requirements
+   583→Based on Bangladesh Bank guidelines:
+   584→
+   585→1. ICT Security Guidelines (Version 4.0 - April 2023):
+   586→
+   587→Mandatory for all financial organizations including fintech
+   588→Covers: Access control, encryption, network security, audit logging
+   589→Compliance deadline: Ongoing enforcement
+   590→2. Data Protection:
+   591→
+   592→ICT Act, 2006 provisions for electronic transactions
+   593→Personal data encryption mandatory
+   594→Data localization considerations (store Bangladeshi user data within country)
+   595→3. Payment Regulations:
+   596→
+   597→Payment and Settlement Systems Regulations (for PSP license)
+   598→MFS Regulations (if acting as mobile money intermediary)
+   599→Minimum capital requirements may apply depending on license type
+   600→B. Security Architecture
+   601→Defense in Depth Strategy:
+   602→
+   603→text
+   604→
+   605→Layer 1: Network Security
+   606→├── WAF (Web Application Firewall)
+   607→├── DDoS Protection (Cloudflare/AWS Shield)
+   608→├── VPN for internal communications
+   609→└── Network segmentation (DMZ for public-facing servers)
+   610→
+   611→Layer 2: Application Security
+   612→├── OWASP Top 10 mitigations
+   613→├── Input validation & sanitization
+   614→├── CSRF protection
+   615→├── Secure headers (CSP, X-Frame-Options)
+   616→└── Regular penetration testing (quarterly)
+   617→
+   618→Layer 3: Data Security
+   619→├── Encryption at rest (AES-256)
+   620→├ Encryption in transit (TLS 1.3)
+   621→├── Field-level encryption for sensitive data (NID, phone)
+   622→├── Data masking in non-production environments
+   623→└── Automated backup with point-in-time recovery
+   624→
+   625→Layer 4: Identity & Access Management
+   626→├── Multi-factor authentication (MFA)
+   627→├── Role-based access control (RBAC)
+   628→├── Session timeout policies
+   629→├── Password complexity rules
+   630→└── Privileged access management (PAM) for admins
+   631→
+   632→Layer 5: Monitoring & Audit
+   633→├── SIEM (Security Information & Event Management)
+   634→├── Real-time alerting for anomalies
+   635→├── Immutable audit trails (write-once storage)
+   636→├── Log retention policy (minimum 7 years for financial data)
+   637→└── Incident response plan
+   638→C. Privacy by Design
+   639→Data Minimization:
+   640→
+   641→Collect only necessary data for each feature
+   642→Anonymize analytics data
+   643→Provide data export/deletion capabilities (GDPR-inspired, future-proofing)
+   644→User Consent Management:
+   645→
+   646→Granular permission controls (location, camera, contacts)
+   647→Clear privacy policy in simple Bengali
+   648→Opt-in (not opt-out) for marketing communications
+   649→9. 📊 SCALABILITY & PERFORMANCE TARGETS
+   650→A. Expected Scale (Year 1-3 Projections)
+   651→Conservative Estimates:
+   652→
+   653→Users: 100,000 (Y1) → 500,000 (Y2) → 2M+ (Y3)
+   654→Daily Transactions: 10,000 (Y1) → 50,000 (Y2) → 200,000 (Y3)
+   655→Concurrent Users: 1,000 peak (Y1) → 5,000 (Y2) → 20,000 (Y3)
+   656→Data Volume: 50GB (Y1) → 500GB (Y2) → 5TB (Y3)
+   657→B. Performance Benchmarks
+   658→Target SLAs (Service Level Agreements):
+   659→
+   660→Metric
+   661→Target
+   662→Measurement
+   663→API Response Time (P95) < 200ms All endpoints
+   664→Map Search Latency      < 300ms Radius queries
+   665→Payment Processing      < 3 seconds     End-to-end
+   666→Wallet Balance Update   < 1 second      Real-time sync
+   667→Push Notification       < 5 seconds     Delivery time
+   668→System Uptime   99.9%   Monthly availability
+   669→
+   670→C. Horizontal Scaling Strategy
+   671→Auto-scaling Configuration:
+   672→
+   673→Web Servers: Scale based on CPU > 70% for 2 minutes
+   674→Database: Read replicas for read-heavy operations (search, browsing)
+   675→Cache Cluster: Redis Cluster mode for horizontal partitioning
+   676→Microservices: Kubernetes HPA (Horizontal Pod Autoscaler)
+   677→Database Scaling:
+   678→
+   679→PostgreSQL: Connection pooling (PgBouncer), read replicas
+   680→MongoDB: Sharding by geographic region or user ID hash
+   681→Redis: Cluster mode with automatic failover
+   682→10. 🗺️ IMPLEMENTATION ROADMAP
+   683→Phase 1: Foundation (Months 1-4)
+   684→Goal: Build core infrastructure and MVP with 2 modules
+   685→
+   686→Deliverables:
+   687→
+   688→ Set up cloud infrastructure (AWS/GCP)
+   689→ Implement Identity & Auth service (single sign-on)
+   690→ Build Digital Wallet with one MFS integration (start with SSLCommerz aggregator)
+   691→ Develop Retail & Community Commerce module (simplest to validate concept)
+   692→ Create Consumer-facing mobile app (iOS + Android via Flutter)
+   693→ Basic admin dashboard for platform management
+   694→Success Metrics:
+   695→
+   696→1,000 registered users
+   697→100 active merchants
+   698→500 transactions processed
+   699→< 5% crash rate on mobile apps
+   700→Phase 2: Expansion (Months 5-8)
+   701→Goal: Add 2 more modules and enhance core features
+   702→
+   703→Deliverables:
+   704→
+   705→ Launch Domestic Services module (high demand, validates location features)
+   706→ Implement Supply Chain & Agriculture module with offline-first capabilities
+   707→ Integrate Google Maps API for location discovery
+   708→ Add real-time inventory sync for merchants
+   709→ Implement WebSocket for live tracking
+   710→ Add Bengali language support (full localization)
+   711→Success Metrics:
+   712→
+   713→10,000 registered users
+   714→500 merchants + 200 service providers
+   715→5,000 monthly transactions
+   716→40% of farmers using offline mode successfully
+   717→Phase 3: Ecosystem Maturation (Months 9-12)
+   718→Goal: Complete all 6 modules and optimize for scale
+   719→
+   720→Deliverables:
+   721→
+   722→ Launch Business Services marketplace
+   723→ Deploy Diagnostic & Medical Hub (requires healthcare partnerships)
+   724→ Integrate additional MFS providers directly (bKash, Nagad APIs)
+   725→ Implement advanced fraud detection system
+   726→ Launch web portal for desktop users
+   727→ Partner with diagnostic centers for report digitization
+   728→Success Metrics:
+   729→
+   730→50,000 registered users
+   731→2,000 merchants, 1,000 service providers
+   732→20,000 monthly transactions
+   733→99.9% uptime achieved
+   734→Phase 4: Scale & Optimize (Year 2)
+   735→Goals:
+   736→
+   737→AI-powered recommendations (personalized discovery)
+   738→Advanced analytics dashboard for businesses
+   739→API platform for third-party integrations
+   740→Explore blockchain for supply chain traceability
+   741→Expand to tier-2 and tier-3 cities aggressively
+   742→11. ⚠️ RISK MITIGATION STRATEGIES
+   743→A. Technical Risks
+   744→Risk
+   745→Impact
+   746→Mitigation Strategy
+   747→Database bottleneck under load  Slow queries, timeouts  Implement caching layer, read replicas, query optimization from day 1
+   748→Payment gateway downtime        Lost revenue, frustrated users  Multiple gateway fallback (if SSLCommerz fails, route to ShurjoPay)
+   749→Offline sync conflicts  Data loss, inconsistent state   CRDTs for conflict resolution, manual override option, clear user communication
+   750→Security breach Financial loss, reputational damage     Bug bounty program, quarterly pentests, encrypted backups, incident response plan
+   751→Third-party API changes Broken integrations     Abstraction layers over external APIs, versioned contracts, monitoring alerts
+   752→
+   753→B. Business Risks
+   754→Risk
+   755→Mitigation
+   756→Regulatory changes      Legal counsel specializing in Bangladesh fintech, flexible architecture to adapt to new compliance needs
+   757→Low merchant adoption   Incentive programs (zero commission for first 3 months), simplified onboarding (< 5 minutes), success stories/marketing
+   758→User trust issues       Verified badges, escrow payments, transparent reviews, responsive dispute resolution
+   759→Competition from existing players       Focus on underserved rural/agricultural market, unique offline-first features, hyper-local community focus
+   760→
+   761→12. 💡 KEY DIFFERENTIATORS & INNOVATION OPPORTUNITIES
+   762→A. What Makes Nityodin Unique
+   763→True Offline-First for Agriculture: Most competitors assume constant connectivity; your focus on rural Bangladesh is a strategic advantage
+   764→Unified Wallet Across Roles: No competitor offers seamless switching between consumer/merchant/provider modes with one balance
+   765→Hyper-Local Community Commerce: Emphasis on neighborhood shops (not just big retailers) strengthens local economies
+   766→Supply Chain Transparency: Blockchain-optional traceability from farm to table builds trust
+   767→Medical Report Digitization: First-mover advantage in centralized health records (huge pain point in Bangladesh)
+   768→B. AI/ML Enhancement Opportunities (Phase 4+)
+   769→Demand Prediction: Help farmers decide what to plant based on consumption trends
+   770→Dynamic Pricing: Suggest optimal prices for merchants based on supply/demand
+   771→Fraud Detection: ML models identifying suspicious transactions in real-time
+   772→Chatbot Support: Bengali NLP chatbot for customer service (reduces support costs)
+   773→Image Recognition: Auto-categorize farmer product photos, detect produce quality
+   774→13. 🛠️ DEVELOPMENT TEAM STRUCTURE RECOMMENDATION
+   775→Minimum Viable Team (Year 1)
+   776→Role
+   777→Count
+   778→Responsibilities
+   779→Technical Lead/CTO      1       Architecture decisions, code review, vendor management
+   780→Backend Engineers       3       Microservices development, database design, API development
+   781→Mobile Engineers (Flutter)      2       Cross-platform app development, offline-first features
+   782→Frontend Engineer       1       Web portal, admin dashboard
+   783→DevOps/SRE Engineer 1   Infrastructure, CI/CD pipelines, monitoring, security hardening 
+   784→UX/UI Designer  1       User research, interface design, prototyping
+   785→QA Engineer     1       Test automation, manual testing, performance testing
+   786→Product Manager 1       Roadmap prioritization, stakeholder management, user feedback
+   787→
+   788→Total: 11 people (can start with 6-8 core members and contract specialists)
+   789→
+   790→14. 💰 ESTIMATED COST PROJECTIONS (YEAR 1)
+   791→Infrastructure Costs (Monthly)
+   792→Cloud hosting (AWS): $2,000 - $5,000 (scales with usage)
+   793→Third-party APIs (Maps, Payments, SMS): $1,000 - $3,000
+   794→Monitoring & Security tools: $500 - $1,000
+   795→CDN & Edge computing: $200 - $500
+   796→Total Monthly Infrastructure: ~$4,000 - $9,500
+   797→Development Costs (Annual)
+   798→Team salaries (11 people, Bangladesh market rates): $150,000 - $250,000
+   799→Software licenses & tools: $10,000 - $20,000
+   800→Training & certifications: $5,000 - $10,000
+   801→Total Year 1 Development: ~$165,000 - $280,000
+   802→One-Time Costs
+   803→Legal & licensing (company registration, potential PSP license): $10,000 - $50,000
+   804→Security audit & compliance certification: $15,000 - $30,000
+   805→Initial branding & marketing: $20,000 - $50,000
+   806→Total One-Time: ~$45,000 - $130,000
+   807→Grand Total Year 1: ~$210,000 - $410,000
+   808→Note: Costs can be reduced by 40-50% by starting with a smaller team (6-8 people) and using managed services where possible.
+   809→
+   810→15. 📞 NEXT STEPS & RECOMMENDED ACTIONS
+   811→Immediate Actions (Next 30 Days):
+   812→✅ Finalize Technology Stack Decision
+   813→Choose between Node.js vs Go for backend
+   814→Decide Flutter vs React Native for mobile
+   815→Select cloud provider (recommend AWS for Bangladesh region presence)
+   816→✅ Engage Legal Counsel Specializing in Bangladesh Fintech
+   817→Determine if PSP license required immediately or can start as aggregator
+   818→Review Bangladesh Bank ICT Security Guidelines compliance checklist
+   819→Draft terms of service and privacy policy
+   820→✅ Conduct User Research (If Not Done Already)
+   821→Interview 20+ farmers about offline workflow needs
+   822→Test mockups with urban consumers and shop owners
+   823→Validate willingness-to-pay assumptions for merchant fees
+   824→✅ Create Detailed Technical Specification Document
+   825→API contract definitions (OpenAPI/Swagger)
+   826→Database schema diagrams
+   827→Wireframes for each role's main flows
+   828→✅ Set Up Development Environment
+   829→Initialize monorepo structure (recommend Nx or Turborepo)
+   830→Configure CI/CD pipeline (GitHub Actions or GitLab CI)
+   831→Establish coding standards and review processes
+   832→🎁 BONUS: QUICK-WIN ARCHITECTURAL PATTERNS
+   833→A. The "Strangler Fig" Pattern for Migration
+   834→If you have existing systems, wrap them with API gateways and gradually replace functionality rather than big-bang rewrite.
+   835→
+   836→B. Feature Flags System
+   837→Use LaunchDarkly or open-source alternative (Unleash) to:
+   838→
+   839→Roll out features gradually (canary releases)
+   840→A/B test different UX approaches
+   841→Disable problematic features instantly without deployment
+   842→C. Event Sourcing for Critical Financial Transactions
+   843→Store sequence of events leading to current state (useful for audit trail and debugging):
+   844→
+   845→text
+   846→
+   847→Event 1: WalletCreated {balance: 0}
+   848→Event 2: FundsAdded {amount: 1000, source: "bKash"}
+   849→Event 3: PaymentMade {amount: 500, recipient: "merchant_123"}
+   850→Current State: balance = 500
+   851→D. Circuit Breaker Pattern
+   852→Prevent cascade failures when external services (payment gateways, MFS APIs) are down:
+   853→
+   854→Open circuit after 3 consecutive failures
+   855→Fallback response (e.g., "Payment temporarily unavailable")
+   856→Half-open state to test recovery before full traffic resumption
+   857→🙏 CONCLUSION
+   858→Your vision for Nityodin addresses genuine pain points in the Bangladeshi market:
+   859→
+   860→✅ Fragmented digital experiences requiring multiple logins
+   861→✅ Exploitative middlemen in agriculture
+   862→✅ Lack of digitization for small neighborhood shops
+   863→✅ Informal service economy without quality assurance
+   864→✅ Paper-based medical record chaos
+   865→✅ Exclusion of rural populations from digital commerce
+   866→The architecture I've outlined is specifically designed to:
+   867→
+   868→Handle intermittent connectivity (offline-first)
+   869→Process high-volume real-time location queries (PostGIS)
+   870→Integrate seamlessly with Bangladesh's MFS ecosystem
+   871→Scale from 1,000 to 1M+ users without architectural rewrites
+   872→Comply with Bangladesh Bank regulations
+   873→Provide exceptional UX across diverse user segments (farmers to urban professionals)
+   874→Your biggest risks are not technical but executional:
+   875→
+   876→Merchant/supply-side acquisition (cold chicken-and-egg problem)
+   877→Regulatory navigation in evolving fintech landscape
+   878→Building trust in a market skeptical of new platforms
+   879→My strongest recommendation: Start small with Retail & Community Commerce + Digital Wallet as your beachhead market. Validate the core thesis ("single identity, multiple roles") before expanding to more complex modules like agriculture (offline challenges) and medical (partnership-dependent).
+   880→
+   881→📚 REFERENCES & FURTHER READING
+   882→Super App Architecture Patterns: troylendman.com/the-ultimate-superapp-architecture-framework-blueprint
+   883→Microservices for FinTech: zymr.com/blog/microservices-architecture-for-fintech
+   884→Offline-First Mobile Architecture: think-it.io/insights/offline-apps
+   885→PostGIS Performance Optimization: discourse.osgeo.org/t/best-practices-for-optimizing-spatial-queries-in-postgis-3-5
+   886→Bangladesh Payment Gateways: geekssort.com/payment-gateway-integration-bangladesh-2026
+   887→Bangladesh Bank ICT Guidelines: cpl.thalesgroup.com/compliance/apac/bangladesh-data-security-compliance-guideline-ict-security
+   888→Omnichannel POS Architecture: szzcs.com/blog/an-omnichannel-pos-architecture-guide-for-retail-and-food-service.html
+   889→Would you like me to dive deeper into any specific section? For example:
+   890→
+   891→Detailed database schema designs for specific modules?
+   892→Step-by-step implementation guide for offline-first sync?
+   893→Sample API contracts for wallet or location services?
+   894→UI wireframe descriptions for farmer onboarding flow?
+   895→Cost optimization strategies for early-stage startups?
+   896→I'm ready to provide additional granularity wherever you need it! 🚀
+   897→
+   898→
+   899→2/2
+   900→
+   901→I have finalize this
+   902→✅ Finalize Technology Stack Decision
+   903→Choose Go for backend
+   904→Decide React Native for mobile
+   905→Select cloud provider (AWS)
+   906→✅ Engage Legal Counsel Specializing in Bangladesh Fintech
+   907→can start as aggregator
+   908→Review Bangladesh Bank ICT Security Guidelines compliance checklist
+   909→Draft terms of service and privacy policy
+   910→✅ Create Detailed Technical Specification Document
+   911→API contract definitions (OpenAPI)
+   912→Database schema diagrams
+   913→Wireframes for each role's main flows
+   914→✅ Set Up Development Environment
+   915→Initialize monorepo structure (Nx)
+   916→Configure CI/CD pipeline (GitLab CI)
+   917→Establish coding standards and review processes  Show full message
+   918→The user has confirmed they've completed the initial 30-day action items and made specific technology decisions:
+   919→
+   920→
+   921→
+   922→🚀 Nityodin Technical Implementation Guide: Phase 1 Deep Dive
+   923→Excellent progress! You've made solid, production-ready technology choices. Now let's transform those decisions into a detailed, actionable technical blueprint.
+   924→
+   925→📋 TECHNOLOGY STACK CONFIRMATION
+   926→Component
+   927→Decision
+   928→Rationale
+   929→Backend Language        Go (Golang)     High performance, excellent concurrency (goroutines), strong standard library, fast compilation, ideal for microservices
+   930→Mobile Framework        React Native    Large ecosystem, JavaScript/TypeScript sharing with web, hot reload, good offline libraries, easier hiring in Bangladesh
+   931→Cloud Provider  AWS     Asia Pacific (Singapore/Mumbai) regions, mature service portfolio, Bangladesh connectivity, extensive documentation
+   932→Monorepo Tool   Nx      Smart caching, dependency graph, shared code management, monorepo-native CI/CD integration
+   933→CI/CD Platform  GitLab CI       Self-hostable, Docker-native, integrated with Nx, good free tier
+   934→Payment Strategy        Aggregator-first        Faster time-to-market via SSLCommerz/ShurjoPay, avoid initial PSP licensing complexity
+   935→
+   936→1. 🏗️ GO BACKEND ARCHITECTURE (MICROSERVICES)
+   937→A. Project Structure (Monorepo Layout)
+   938→text
+   939→
+   940→nityodin/
+   941→├── apps/                          # Deployable applications
+   942→│   ├── api-gateway/               # Kong/Gateway service
+   943→│   ├── identity-service/          # Auth & user management
+   944→│   ├── wallet-service/            # Digital wallet & payments
+   945→│   ├── retail-service/            # Retail & community commerce
+   946→│   ├── agriculture-service/       # Supply chain & farming
+   947→│   ├── domestic-service/          # Home services marketplace
+   948→│   ├── business-service/          # Business services marketplace
+   949→│   ├── medical-service/           # Diagnostic & medical hub
+   950→│   ├── location-service/          # Geospatial discovery engine
+   951→│   ├── notification-service/      # Push notifications, SMS, email
+   952→│   └── admin-service/             # Admin dashboard API
+   953→│
+   954→├── libs/                          # Shared libraries
+   955→│   ├── go-common/                 # Shared Go utilities
+   956→│   │   ├── config/                # Configuration loading (Viper)
+   957→│   │   ├── database/              # DB connection pools
+   958→│   │   ├── middleware/            # HTTP middleware (auth, logging, rate-limit)
+   959→│   │   ├── models/                # Shared data structures
+   960→│   │   ├── errors/                # Standardized error handling
+   961→│   │   ├── logger/                # Structured logging (Zap)
+   962→│   │   └── utils/                 # Helpers (validation, hashing, etc.)
+   963→│   │
+   964→│   ├── proto/                     # Protocol Buffer definitions (if using gRPC)
+   965→│   └── events/                    # Shared event schemas (for Kafka)
+   966→│
+   967→├── deployments/                   # Infrastructure as Code
+   968→│   ├── docker/                    # Dockerfiles per service
+   969→│   ├── kubernetes/                # K8s manifests/helm charts
+   970→│   └── terraform/                 # AWS infrastructure
+   971→│
+   972→├── docs/                          # Documentation
+   973→│   ├── api/                       # OpenAPI specifications
+   974→│   ├── architecture/              # Design documents
+   975→│   └── runbooks/                  # Operational procedures
+   976→B. Go Service Template (Standard Pattern)
+   977→Each microservice follows this consistent structure:
+   978→
+   979→go
+   980→
+   981→// apps/identity-service/main.go
+   982→package main
+   983→
+   984→import (
+   985→    "context"
+   986→    "fmt"
+   987→    "log"
+   988→    "net/http"
+   989→    "os"
+   990→    "os/signal"
+   991→    "syscall"
+   992→    "time"
+   993→    
+   994→    "github.com/nityodin/libs/go-common/config"
+   995→    "github.com/nityodin/libs/go-common/database"
+   996→    "github.com/nityodin/libs/go-common/logger"
+   997→    "github.com/nityodin/libs/go-common/middleware"
+   998→    
+   999→    "github.com/gorilla/mux"
+  1000→    "github.com/prometheus/client_golang/prometheus/promhttp"
+  1001→)
+  1002→
+  1003→func main() {
+  1004→    // 1. Load configuration
+  1005→    cfg, err := config.Load("identity-service")
+  1006→    if err != nil {
+  1007→        log.Fatalf("Failed to load config: %v", err)
+  1008→    }
+  1009→    
+  1010→    // 2. Initialize structured logger
+  1011→    appLogger := logger.New(cfg.Environment, cfg.LogLevel)
+  1012→    
+  1013→    // 3. Connect to databases
+  1014→    dbPool, err := database.NewPostgres(cfg.PostgresURL)
+  1015→    if err != nil {
+  1016→        appLogger.Fatal("Database connection failed", "error", err)
+  1017→C. Key Go Libraries Recommendation
+  1018→go
+  1019→
+  1020→// go.mod dependencies (per service)
+  1021→require (
+  1022→    // Web framework
+  1023→    github.com/gorilla/mux v1.8.0           // Router
+  1024→    
+  1025→    // Database
+  1026→    github.com/jackc/pgx/v5 v5.5.0          // PostgreSQL driver (performant)
+  1027→    github.com/redis/go-redis/v9 v9.0.5     // Redis client
+  1028→    lib/pq v1.10.9                          // PostGIS support
+  1029→    
+  1030→    // Validation
+  1031→    github.com/go-playground/validator/v10 v10.14.0
+  1032→    
+  1033→    // Authentication
+  1034→    github.com/golang-jwt/jwt/v5 v5.0.0     // JWT library
+  1035→    golang.org/x/crypto v0.12.0             // bcrypt for password hashing
+  1036→    
+  1037→    // Configuration
+  1038→    github.com/spf13/viper v1.16.0          // Config management
+  1039→    
+  1040→    // Logging
+  1041→    go.uber.org/zap v1.26.0                 // Structured logging
+  1042→    
+  1043→    // HTTP utilities
+  1044→    github.com/unrolled/secure v1.12.0      // Security middleware
+  1045→    
+  1046→    // Metrics & Tracing
+  1047→    github.com/prometheus/client_golang v1.16.0  // Prometheus metrics
+  1048→    go.opentelemetry.io/otel v1.16.0             // OpenTelemetry
+  1049→    
+  1050→    // Message Queue (for async services)
+  1051→    github.com/segmentio/kafka-go v0.4.39     // Kafka client
+  1052→    
+  1053→    // Testing
+  1054→    github.com/stretchr/testify v1.8.4       // Test assertions
+  1055→    github.com/golang/mock v1.6.0            // Mock generation
+  1056→2. 📱 REACT NATIVE MOBILE ARCHITECTURE
+  1057→A. Project Structure
+  1058→text
+  1059→
+  1060→apps/mobile/                      # React Native app
+  1061→│   │   │   ├── ProviderDashboard.tsx
+  1062→│   │   │   ├── JobListScreen.tsx
+  1063→│   │   │   ├── AvailabilityToggle.tsx
+  1064→│   │   │   └── NavigationScreen.tsx
+  1065→│   │   │
+  1066→│   │   ├── medical/
+  1067→│   │   │   ├── MedicalHomeScreen.tsx
+  1068→│   │   │   ├── ReportsArchiveScreen.tsx
+  1069→│   │   │   ├── UploadReportScreen.tsx
+  1070→│   │   │   └── DoctorBookingScreen.tsx
+  1071→│   │   │
+  1072→│   │   └── common/
+  1073→│   │       ├── ProfileScreen.tsx
+  1074→│   │       ├── SettingsScreen.tsx
+  1075→│   │       ├── NotificationScreen.tsx
+  1076→│   │       └── ChatScreen.tsx
+  1077→│   │
+  1078→│   ├── navigation/              # Navigation configuration
+  1079→│   │   ├── Navigator.tsx         # Root navigator
+  1080→│   │   ├── ConsumerNavigator.tsx
+  1081→│   │   ├── MerchantNavigator.tsx
+  1082→│   │   ├── FarmerNavigator.tsx
+  1083→│   │   └── ProviderNavigator.tsx
+  1084→│   │
+  1085→│   ├── services/                # API & business logic layer
+  1086→│   │   ├── api/
+  1087→│   │   │   ├── axiosInstance.ts  # Axios configuration
+  1088→│   │   │   ├── authApi.ts
+  1089→│   │   │   ├── productApi.ts
+  1090→│   │   │   ├── orderApi.ts
+  1091→│   │   │   ├── locationApi.ts
+  1092→│   │   │   └── walletApi.ts
+  1093→│   │   ├── offline/
+  1094→│   │   │   ├── storage.ts        # AsyncStorage wrapper
+  1095→│   │   │   ├── syncManager.ts    # Offline sync logic
+  1096→│   │   │   ├── queueManager.ts   # Operation queue
+  1097→│   │   │   └── conflictResolver.ts
+  1098→│   │   └── hooks/                # Custom React hooks
+  1099→│   │       ├── useAuth.ts
+  1100→│   │       ├── useLocation.ts
+  1101→│   │       ├── useOffline.ts
+  1102→│   │       ├── useWallet.ts
+  1103→│   │       └── useRole.ts
+  1104→│   │
+  1105→│   ├── store/                   # State management (Zustand recommended)
+  1106→│   │   ├── authStore.ts
+  1107→│   │   ├── cartStore.ts
+  1108→│   │   ├── locationStore.ts
+  1109→│   │   └── roleStore.ts
+  1110→│   │
+  1111→│   ├── utils/                   # Utility functions
+  1112→│   │   ├── validation.ts
+  1113→│   │   ├── formatters.ts        # Date, currency formatting
+  1114→│   │   ├── constants.ts
+  1115→│   │   └── helpers.ts
+  1116→│   │
+  1117→│   ├── assets/                  # Static assets
+  1118→│   │   ├── images/
+  1119→│   │   ├── fonts/
+  1120→│   │   └── i18n/                # Translation files
+  1121→│   │       ├── en.json
+  1122→│   │       └── bn.json
+  1123→│   │
+  1124→│   └── types/                   # TypeScript type definitions
+  1125→│       ├── auth.types.ts
+  1126→│       ├── product.types.ts
+  1127→│       ├── order.types.ts
+  1128→│       └── user.types.ts
+  1129→│
+  1130→├── __tests__/                   # Test files
+  1131→├── android/                     # Android native code
+  1132→├── ios/                         # iOS native code
+  1133→├── App.tsx                      # Root component
+  1134→├── app.json                     # React Native config
+  1135→├── babel.config.js
+  1136→├── tsconfig.json
+  1137→└── package.json
+  1138→B. State Management Architecture (Zustand)
+  1139→typescript
+  1140→
+  1141→// src/store/authStore.ts
+  1142→      updateProfile: (profile: Partial<UserProfile>) => {
+  1143→        set(state => ({
+  1144→          user: state.user ? { ...state.user, ...profile } : null,
+  1145→        }));
+  1146→      },
+  1147→      
+  1148→      setToken: (token: string) => set({ token }),
+  1149→    }),
+  1150→    {
+  1151→      name: 'nityodin-auth', // Storage key
+  1152→      partialize: (state) => ({ 
+  1153→        token: state.token, 
+  1154→        activeRole: state.activeRole 
+  1155→      }), // Only persist token and role
+  1156→    }
+  1157→  )
+  1158→);
+  1159→C. Offline-First Sync Manager (Critical for Farmers)
+  1160→typescript
+  1161→
+  1162→// src/services/offline/syncManager.ts
+  1163→import { NetInfo } from '@react-native-community/netinfo';
+  1164→import AsyncStorage from '@react-native-async-storage/async-storage';
+  1165→import { queueManager } from './queueManager';
+  1166→
+  1167→type SyncOperation = {
+  1168→  id: string;
+  1169→  type: 'CREATE' | 'UPDATE' | 'DELETE';
+  1170→  entity: string; // 'product', 'order', 'profile'
+  1171→  payload: any;
+  1172→  timestamp: number;
+  1173→  retryCount: number;
+  1174→};
+  1175→
+  1176→class SyncManager {
+  1177→  private isSyncing = false;
+  1178→  private syncInterval: NodeJS.Timeout | null = null;
+  1179→  
+  1180→  constructor() {
+  1181→    this.initializeAutoSync();
+  1182→  }
+  1183→  
+  1184→  /**
+  1185→   * Initialize automatic sync when connectivity changes
+  1186→   */
+  1187→  private initializeAutoSync(): void {
+  1188→    // Listen for network state changes
+  1189→    NetInfo.addEventListener(state => {
+  1190→      if (state.isConnected && !this.isSyncing) {
+  1191→        this.syncPendingOperations();
+  1192→      }
+  1193→    });
+  1194→    
+  1195→    // Also attempt sync every 30 seconds when online
+  1196→    this.syncInterval = setInterval(() => {
+  1197→      NetInfo.fetch().then(state => {
+  1198→3. ☁️ AWS INFRASTRUCTURE SETUP
+  1199→A. Architecture Diagram (Terraform)
+  1200→hcl
+  1201→
+  1202→# deployments/terraform/main.tf
+  1203→
+  1204→terraform {
+  1205→  required_version = ">= 1.5.0"
+  1206→  
+  1207→  required_providers {
+  1208→    aws = {
+  1209→      source  = "hashicorp/aws"
+  1210→      version = "~> 5.0"
+  1211→    }
+  1212→  }
+  1213→  
+  1214→  backend "s3" {
+  1215→    bucket         = "nityodin-terraform-state"
+  1216→    key            = "prod/terraform.tfstate"
+  1217→    region         = "ap-south-1"        # Mumbai (closest to Bangladesh)
+  1218→    encrypt        = true
+  1219→    dynamodb_table = "nityodin-terraform-locks"
+  1220→  }
+  1221→}
+  1222→
+  1223→provider "aws" {
+  1224→  region = var.aws_region
+  1225→  
+  1226→  default_tags {
+  1227→    tags = {
+  1228→      Project     = "Nityodin"
+  1229→      Environment = var.environment
+  1230→      ManagedBy   = "Terraform"
+  1231→    }
+  1232→  }
+  1233→}
+  1234→
+  1235→# Variables
+  1236→variable "aws_region" {
+  1237→  description = "AWS region"
+  1238→B. Core AWS Resources
+  1239→hcl
+  1240→
+  1241→# deployments/terraform/networking.tf
+  1242→    apply_server_side_encryption_by_default {
+  1243→      sse_algorithm = "aws:kms"
+  1244→    }
+  1245→  }
+  1246→}
+  1247→
+  1248→# CloudFront CDN for static assets and API caching
+  1249→resource "aws_cloudfront_distribution" "main" {
+  1250→  origin {
+  1251→    domain_name = aws_lb.main.dns_name
+  1252→    origin_id   = "alb-origin"
+  1253→    
+  1254→    custom_origin_config {
+  1255→      http_port              = 80
+  1256→      https_port             =443
+  1257→      origin_protocol_policy = "https-only"
+  1258→      ssl_protocol           = "TLSv1.2_2021"
+  1259→    }
+  1260→  }
+  1261→  
+  1262→  origin {
+  1263→    domain_name = aws_s3_bucket.media.bucket_regional_domain_name
+  1264→    origin_id   = "s3-origin"
+  1265→    
+  1266→    s3_origin_config {
+  1267→      origin_access_identity = aws_cloudfront_origin_access_identity.main.cloudfront_access_identity_path
+  1268→    }
+  1269→  }
+  1270→  
+  1271→  enabled             = true
+  1272→  is_ipv6_enabled     = true
+  1273→  price_class         = "PriceClass_100"  # Optimize for cost (US/Europe only initially)
+  1274→  
+  1275→  default_cache_behavior {
+  1276→    target_origin_id       = "alb-origin"
+  1277→    viewer_protocol_policy = "redirect-to-https"
+  1278→    allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
+  1279→    cached_methods         = ["GET", "HEAD"]
+  1280→    compress               = true
+  1281→    
+  1282→    forwarded_values {
+  1283→      query_string = true
+  1284→      
+  1285→      cookies {
+  1286→        forward = "none"
+  1287→      }
+  1288→    }
+  1289→  }
+  1290→  
+  1291→  # Cache behavior for S3 media (aggressive caching)
+  1292→  ordered_cache_behavior {
+  1293→    path_pattern     = "/media/*"
+  1294→    target_origin_id = "s3-origin"
+  1295→    viewer_protocol_policy = "redirect-to-https"
+  1296→    
+  1297→    forwarded_values {
+  1298→      query_string = false
+  1299→      cookies {
+  1300→        forward = "none"
+  1301→      }
+  1302→    }
+  1303→    
+  1304→    min_ttl     = 86400    // 1 day
+  1305→    default_ttl = 604800   // 7 days
+  1306→    max_ttl     = 31536000 // 1 year
+  1307→  }
+  1308→  
+  1309→  restrictions {
+  1310→    geo_restriction {
+  1311→      restriction_type = "whitelist"
+  1312→      locations        = ["BD"]  # Restrict to Bangladesh initially
+  1313→    }
+  1314→  }
+  1315→  
+  1316→  viewer_certificate {
+  1317→    acm_certificate_arn      = aws_acm_certificate.main.arn
+  1318→    ssl_support_method       = "sni-only"
+  1319→    minimum_protocol_version = "TLSv1.2_2021"
+  1320→  }
+  1321→}
+  1322→C. ECS Task Definitions (Per Service)
+  1323→json
+  1324→
+  1325→// deployments/docker/identity-service-taskdef.json
+  1326→{
+  1327→  "family": "nityodin-identity-service",
+  1328→  "networkMode": "awsvpc",
+  1329→  "requiresCompatibilities": ["FARGATE"],
+  1330→  "cpu": "256",
+  1331→  "memory": "512",
+  1332→  "executionRoleArn": "arn:aws:iam::${account_id}:role/ecsTaskExecutionRole",
+  1333→  "taskRoleArn": "arn:aws:iam::${account_id}:role/nityodinTaskRole",
+  1334→  
+  1335→  "containerDefinitions": [
+  1336→    {
+  1337→      "name": "identity-service",
+  1338→      "image": "${ecr_repository_url}/identity-service:${git_sha}",
+  1339→      "essential": true,
+  1340→      "portMappings": [
+  1341→        {
+  1342→          "containerPort": 8080,
+  1343→          "protocol": "tcp"
+  1344→        }
+  1345→      ],
+  1346→      "environment": [
+  1347→        {
+  1348→          "name": "ENVIRONMENT",
+  1349→          "value": "production"
+  1350→        },
+  1351→        {
+  1352→          "name": "LOG_LEVEL",
+  1353→          "value": "info"
+  1354→        }
+  1355→      ],
+  1356→      "secrets": [
+  1357→        {
+  1358→          "name": "DATABASE_URL",
+  1359→          "valueFrom": "arn:aws:secretsmanager:region:account:secret:nityodin/db-url"
+  1360→        },
+  1361→4. 🗄️ DATABASE SCHEMA DESIGN (POSTGRESQL + POSTGIS)
+  1362→A. Core Identity Schema
+  1363→sql
+  1364→
+  1365→-- ============================================================
+  1366→-- IDENTITY SERVICE DATABASE SCHEMA
+  1367→-- ============================================================
+  1368→
+  1369→-- Enable necessary extensions
+  1370→CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+  1371→CREATE EXTENSION IF NOT EXISTS "pgcrypto";  -- For encryption functions
+  1372→CREATE EXTENSION IF NOT EXISTS "postgis";   -- For geospatial queries
+  1373→
+  1374→-- Users table (central identity)
+  1375→CREATE TABLE users (
+  1376→    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  1377→    
+  1378→    -- Primary identity information
+  1379→    phone VARCHAR(20) UNIQUE NOT NULL,
+  1380→    email VARCHAR(255) UNIQUE,
+  1381→    password_hash VARCHAR(255) NOT NULL,  -- bcrypt hash
+  1382→    
+  1383→    -- Verification status
+  1384→    is_phone_verified BOOLEAN DEFAULT FALSE,
+  1385→    is_email_verified BOOLEAN DEFAULT FALSE,
+  1386→    is_nid_verified BOOLEAN DEFAULT FALSE,
+  1387→    nid_number VARCHAR(20) ENCRYPTED,  -- Encrypted NID (sensitive)
+  1388→    
+  1389→    -- Profile information
+  1390→    full_name VARCHAR(255),
+  1391→    avatar_url TEXT,
+  1392→    date_of_birth DATE,
+  1393→    gender VARCHAR(10),  -- 'male', 'female', 'other'
+  1394→    
+  1395→    -- Location (for proximity features)
+  1396→    home_location GEOGRAPHY(POINT, 4326),  -- SRID 4326 (GPS coordinates)
+  1397→    city VARCHAR(100),
+  1398→    district VARCHAR(100),
+  1399→    division VARCHAR(100),
+  1400→    
+  1401→B. Wallet Service Schema
+  1402→sql
+  1403→
+  1404→-- ============================================================
+  1405→CREATE INDEX idx_transactions_status ON transactions(transaction_status);
+  1406→CREATE INDEX idx_transactions_created ON transactions(created_at DESC);
+  1407→CREATE INDEX idx_transactions_reference ON transactions(reference_type, reference_id);
+  1408→CREATE INDEX idx_transactions_external ON transactions(external_transaction_id);
+  1409→
+  1410→-- Escrow holds table (for service payments)
+  1411→CREATE TABLE escrow_holds (
+  1412→    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  1413→    transaction_id UUID NOT NULL REFERENCES transactions(id),
+  1414→    
+  1415→    -- Related entities
+  1416→    order_id UUID,
+  1417→    service_booking_id UUID,
+  1418→    
+  1419→    -- Parties
+  1420→    payer_wallet_id UUID NOT NULL REFERENCES wallets(id),
+  1421→    payee_wallet_id UUID NOT NULL REFERENCES wallets(id),
+  1422→    
+  1423→    -- Amount held (in paisa)
+  1424→    amount BIGINT NOT NULL,
+  1425→    
+  1426→    -- Hold status
+  1427→    hold_status VARCHAR(20) DEFAULT 'held',  -- 'held', 'released', 'refunded', 'disputed'
+  1428→    
+  1429→    -- Release conditions
+  1430→    auto_release_at TIMESTAMP WITH TIME ZONE,  // Auto-release time (e.g., 24hrs after service marked complete)
+  1431→    release_condition JSONB DEFAULT '{}',
+  1432→    
+  1433→    -- Dispute info
+  1434→    dispute_reason TEXT,
+  1435→    disputed_by UUID REFERENCES users(id),
+  1436→    disputed_at TIMESTAMP WITH TIME ZONE,
+  1437→    resolved_by UUID REFERENCES users(id),  -- Admin who resolved
+  1438→    resolution_notes TEXT,
+  1439→    
+  1440→    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  1441→    released_at TIMESTAMP WITH TIME ZONE,
+  1442→    refunded_at TIMESTAMP WITH TIME ZONE
+  1443→);
+  1444→
+  1445→CREATE INDEX idx_escrow_payer ON escrow_holds(payer_wallet_id);
+  1446→CREATE INDEX idx_escrow_payee ON escrow_holds(payee_wallet_id);
+  1447→CREATE INDEX idx_escrow_status ON escrow_holds(hold_status);
+  1448→
+  1449→-- Wallet funding requests (when user adds money via MFS)
+  1450→CREATE TABLE funding_requests (
+  1451→    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  1452→    wallet_id UUID NOT NULL REFERENCES wallets(id),
+  1453→    
+  1454→    funding_source funding_source NOT NULL,
+  1455→    amount BIGINT NOT NULL,  // Requested amount in paisa
+  1456→    fee_amount BIGINT DEFAULT 0,
+  1457→    total_amount BIGINT NOT NULL,  // Amount user needs to send (including fees)
+  1458→    
+  1459→    -- Payment gateway integration
+  1460→    payment_gateway VARCHAR(50),  -- 'sslcommerz', 'shurjopay', etc.
+  1461→    gateway_request JSONB NOT NULL,  // Encrypted payment initiation data
+  1462→    gateway_response JSONB,  // Callback data from gateway
+  1463→    
+  1464→    -- Status
+  1465→    status VARCHAR(20) DEFAULT 'pending',  -- 'pending', 'processing', 'completed', 'expired', 'failed'
+  1466→    
+  1467→    -- Expiration (requests expire if not paid within timeframe)
+  1468→    expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
+  1469→    paid_at TIMESTAMP WITH TIME ZONE,
+  1470→    
+  1471→    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  1472→    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  1473→);
+  1474→
+  1475→CREATE INDEX idx_funding_wallet ON funding_requests(wallet_id);
+  1476→CREATE INDEX idx_funding_status ON funding_requests(status);
+  1477→CREATE INDEX idx_funding_expires ON funding_requests(expires_at) WHERE status = 'pending';
+  1478→
+  1479→-- P2P transfer requests (for future implementation)
+  1480→CREATE TABLE p2p_transfers (
+  1481→    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  1482→    sender_wallet_id UUID NOT NULL REFERENCES wallets(id),
+  1483→    receiver_wallet_id UUID NOT NULL REFERENCES wallets(id),
+  1484→    
+  1485→    amount BIGINT NOT NULL,
+  1486→C. Location-Based Discovery Schema (PostGIS)
+  1487→sql
+  1488→
+  1489→-- ============================================================
+  1490→-- LOCATION SERVICE DATABASE SCHEMA
+  1491→-- Uses PostGIS for geospatial queries
+  1492→-- ============================================================
+  1493→
+  1494→-- Merchants/Service Providers locations
+  1495→CREATE TABLE business_locations (
+  1496→    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  1497→    owner_user_id UUID NOT NULL REFERENCES users(id),
+  1498→    business_role user_role NOT NULL,  -- References user_role enum
+  1499→    
+  1500→    -- Business identification
+  1501→    business_name VARCHAR(255) NOT NULL,
+  1502→    business_slug VARCHAR(255) UNIQUE,  -- URL-friendly name
+  1503→    description TEXT,
+  1504→    
+  1505→    -- Category classification
+  1506→    primary_category VARCHAR(100) NOT NULL,  -- 'grocery', 'plumbing', 'diagnostic', etc.
+  1507→    subcategories TEXT[],  -- Array of sub-categories
+  1508→    tags TEXT[],
+  1509→    
+  1510→    -- Location (THE CRITICAL POSTGIS FIELD)
+  1511→    location GEOGRAPHY(POINT, 4326) NOT NULL,  -- GPS coordinates (lat, lng)
+  1512→    address TEXT NOT NULL,
+  1513→    area VARCHAR(100),
+  1514→    city VARCHAR(100) NOT NULL,
+  1515→    district VARCHAR(100),
+  1516→    division VARCHAR(100),
+  1517→    postal_code VARCHAR(10),
+  1518→    
+  1519→    -- Contact information
+  1520→    phone VARCHAR(20),
+  1521→    alternate_phone VARCHAR(20),
+  1522→    email VARCHAR(255),
+  1523→    website TEXT,
+  1524→    
+  1525→5. 🔌 OPENAPI SPECIFICATION (API CONTRACTS)
+  1526→A. Identity Service API
+  1527→yaml
+  1528→
+  1529→# docs/api/identity-service-openapi.yaml
+  1530→            application/json:
+  1531→              schema:
+  1532→                $ref: '#/components/schemas/UserProfile'
+  1533→
+  1534→    put:
+  1535→      summary: Update user profile
+  1536→      tags: [Profile]
+  1537→      security:
+  1538→        - bearerAuth: []
+  1539→      requestBody:
+  1540→        required: true
+  1541→        content:
+  1542→          application/json:
+  1543→            schema:
+  1544→              $ref: '#/components/schemas/UpdateProfileRequest'
+  1545→      responses:
+  1546→        '200':
+  1547→          description: Profile updated
+  1548→          content:
+  1549→            application/json:
+  1550→              schema:
+  1551→                $ref: '#/components/schemas/UserProfile'
+  1552→
+  1553→  /roles:
+  1554→    get:
+  1555→      summary: List user's available roles
+  1556→      tags: [Roles]
+  1557→      security:
+  1558→        - bearerAuth: []
+  1559→      responses:
+  1560→        '200':
+  1561→          description: Roles listed
+  1562→          content:
+  1563→            application/json:
+  1564→              schema:
+  1565→                type: array
+  1566→                items:
+  1567→                  $ref: '#/components/schemas/UserRole'
+  1568→
+  1569→  /roles/{roleId}/activate:
+  1570→    post:
+  1571→      summary: Activate a specific role
+  1572→      tags: [Roles]
+  1573→      security:
+  1574→        - bearerAuth: []
+  1575→      parameters:
+  1576→        - name: roleId
+  1577→          in: path
+  1578→          required: true
+  1579→          schema:
+  1580→            $ref: '#/components/schemas/RoleId'
+  1581→      responses:
+  1582→        '200':
+  1583→          description: Role activated
+  1584→          content:
+  1585→            application/json:
+  1586→              schema:
+  1587→                $ref: '#/components/schemas/UserRole'
+  1588→
+  1589→components:
+  1590→  securitySchemes:
+  1591→    bearerAuth:
+  1592→      type: http
+  1593→      scheme: bearer
+  1594→      bearerFormat: JWT
+  1595→      description: "JWT Access Token (format: Bearer <token>)"
+  1596→
+  1597→  schemas:
+  1598→    RegisterRequest:
+  1599→      type: object
+  1600→      required:
+  1601→        - phone
+  1602→        - password
+  1603→        - fullName
+  1604→      properties:
+  1605→        phone:
+  1606→          type: string
+  1607→          pattern: '^\\+8801[3-9]\\d{8}$'
+  1608→          example: "+8801712345678"
+  1609→          description: Bangladeshi phone number format
+  1610→        password:
+  1611→B. Location Discovery API
+  1612→yaml
+  1613→
+  1614→# docs/api/location-service-openapi.yaml
+  1615→openapi: 3.0.3
+  1616→info:
+  1617→  title: Nityodin Location Discovery API
+  1618→  description: Geospatial search and business discovery endpoints
+  1619→  version: 1.0.0
+  1620→
+  1621→paths:
+  1622→  /search/nearby:
+  1623→    get:
+  1624→      summary: Find businesses within radius
+  1625→      tags: [Discovery]
+  1626→      security:
+  1627→        - bearerAuth: []
+  1628→      parameters:
+  1629→        - name: lat
+  1630→          in: query
+  1631→          required: true
+  1632→          schema:
+  1633→            type: number
+  1634→            format: float
+  1635→            minimum: -90
+  1636→            maximum: 90
+  1637→          example: 23.8103
+  1638→          description: Latitude of search center
+  1639→        - name: lng
+  1640→          in: query
+  1641→          required: true
+  1642→          schema:
+  1643→            type: number
+  1644→            format: float
+  1645→            minimum: -180
+  1646→            maximum: 180
+  1647→          example: 90.4125
+  1648→          description: Longitude of search center
+  1649→        - name: radius
+  1650→6. 🔧 NX MONOREPO CONFIGURATION
+  1651→A. Nx Workspace Configuration
+  1652→json
+  1653→
+  1654→// nx.json
+  1655→{
+  1656→  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  1657→  "npmScope": "nityodin",
+  1658→  "affected": {
+  1659→    "defaultBase": "main"
+  1660→  },
+  1661→  "cli": {
+  1662→    "packageManager": "npm"
+  1663→  },
+  1664→  "tasksRunnerOptions": {
+  1665→    "default": {
+  1666→      "runner": "@nrwl/workspace/tasks-runners/default",
+  1667→      "options": {
+  1668→        "cacheableOperations": [
+  1669→          "build",
+  1670→          "test",
+  1671→          "lint",
+  1672→          "e2e",
+  1673→          "docker-build"
+  1674→        ]
+  1675→      }
+  1676→    }
+  1677→  },
+  1678→  "targetDefaults": {
+  1679→    "build": {
+  1680→      "dependsOn": ["^build"],
+  1681→      "inputs": ["production", "^production"]
+  1682→    },
+  1683→    "test": {
+  1684→      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+  1685→    },
+  1686→    "lint": {
+  1687→      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+  1688→    }
+  1689→  },
+  1690→B. Project Configuration (Example: Mobile App)
+  1691→json
+  1692→
+  1693→// apps/mobile/project.json
+  1694→{
+  1695→  "name": "mobile",
+  1696→  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  1697→  "sourceRoot": "apps/mobile/src",
+  1698→  "projectType": "application",
+  1699→  "targets": {
+  1700→    "build": {
+  1701→      "executor": "@nrwl/react-native:build",
+  1702→      "outputs": ["{options.outputPath}"],
+  1703→      "options": {
+  1704→        "outputPath": "dist/apps/mobile",
+  1705→        "entryFile": "src/main.tsx",
+  1706→        "platforms": ["ios", "android"],
+  1707→        "envFile": "apps/mobile/.env.production"
+  1708→      },
+  1709→      "configurations": {
+  1710→        "development": {
+  1711→          "envFile": "apps/mobile/.env.development"
+  1712→        },
+  1713→        "staging": {
+  1714→          "envFile": "apps/mobile/.env.staging"
+  1715→        }
+  1716→      }
+  1717→    },
+  1718→    "test": {
+  1719→      "executor": "@nrwl/jest:jest",
+  1720→      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+  1721→      "options": {
+  1722→        "jestConfig": "apps/mobile/jest.config.ts",
+  1723→        "passWithNoTests": true
+  1724→      }
+  1725→    },
+  1726→    "lint": {
+  1727→      "executor": "@nrwl/linter:eslint",
+  1728→      "outputs": ["{options.outputFile}"],
+  1729→7. 🔄 GITLAB CI/CD PIPELINE
+  1730→yaml
+  1731→
+  1732→# .gitlab-ci.yml
+  1733→    - apk add --no-cache python3 py-pip
+  1734→    - pip install awscli
+  1735→    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  1736→  variables:
+  1737→    DOCKER_TLS_CERTDIR: "/certs"
+  1738→  script:
+  1739→    - |
+  1740→      echo "Building Docker images for commit ${CI_COMMIT_SHA:0:8}"
+  1741→      
+  1742→      # Build and push each service
+  1743→      for service in identity-service wallet-service retail-service; do
+  1744→        echo "Building ${service}..."
+  1745→        docker build \
+  1746→          -t ${DOCKER_REGISTRY}/nityodin/${service}:${CI_COMMIT_SHA} \
+  1747→          -t ${DOCKER_REGISTRY}/nityodin/${service}:latest \
+  1748→          -f deployments/docker/${service}.Dockerfile .
+  1749→        
+  1750→        echo "Pushing ${service}..."
+  1751→        docker push ${DOCKER_REGISTRY}/nityodin/${service}:${CI_COMMIT_SHA}
+  1752→        docker push ${DOCKER_REGISTRY}/nityodin/${service}:latest
+  1753→      done
+  1754→  only:
+  1755→    - main
+  1756→    - develop
+  1757→  environment:
+  1758→    name: production
+  1759→
+  1760→# ===========================================
+  1761→# STAGE 6: DEPLOY TO STAGING
+  1762→# ===========================================
+  1763→
+  1764→deploy:staging:
+  1765→  stage: deploy-staging
+  1766→  image: hashicorp/terraform:1.5
+  1767→  before_script:
+  1768→    - apk add --no-cache curl jq
+  1769→  script:
+  1770→    - cd deployments/terraform/environments/staging
+  1771→    - terraform init
+  1772→    - terraform plan -out=tfplan -var="app_version=${CI_COMMIT_SHA}"
+  1773→    - terraform apply -auto-approve tfplan
+  1774→    - |
+  1775→      # Run database migrations
+  1776→      curl -X POST https://staging-api.nityodin.com/admin/migrations/run \
+  1777→        -H "Authorization: Bearer ${STAGING_ADMIN_TOKEN}"
+  1778→  environment:
+  1779→    name: staging
+  1780→    url: https://staging-api.nityodin.com
+  1781→  only:
+  1782→    - develop
+  1783→
+  1784→# ===========================================
+  1785→# STAGE 7: DEPLOY TO PRODUCTION
+  1786→# ===========================================
+  1787→
+  1788→deploy:production:
+  1789→  stage: deploy-production
+  1790→  image: hashicorp/terraform:1.5
+  1791→  before_script:
+  1792→    - apk add --no-cache curl jq
+  1793→  script:
+  1794→    - cd deployments/terraform/environments/production
+  1795→    - terraform init
+  1796→    - terraform plan -out=tfplan -var="app_version=${CI_COMMIT_SHA}"
+  1797→    # Manual approval required for production
+  1798→    - terraform apply -auto-approve tfplan
+  1799→    - |
+  1800→      # Run database migrations
+  1801→      curl -X POST https://api.nityodin.com/admin/migrations/run \
+  1802→        -H "Authorization: Bearer ${PRODUCTION_ADMIN_TOKEN}"
+  1803→  environment:
+  1804→    name: production
+  1805→    url: https://api.nityodin.com
+  1806→  when: manual  # Requires manual approval
+  1807→  only:
+  1808→    - main
+  1809→
+  1810→# ===========================================
+  1811→# STAGE 8: POST-DEPLOY VERIFICATION
+  1812→# ===========================================
+  1813→
+  1814→8. 📝 CODING STANDARDS & BEST PRACTICES
+  1815→A. Go Coding Standards
+  1816→go
+  1817→
+  1818→// libs/go-common/errors/errors.go
+  1819→        Message:    "Invalid input data",
+  1820→        StatusCode: http.StatusBadRequest,
+  1821→    }
+  1822→    
+  1823→    ErrConflict = &AppError{
+  1824→        Code:       "CONFLICT",
+  1825→        Message:    "Resource conflict",
+  1826→        StatusCode: http.StatusConflict,
+  1827→    }
+  1828→    
+  1829→    ErrInternal = &AppError{
+  1830→        Code:       "INTERNAL_ERROR",
+  1831→        Message:    "An unexpected error occurred",
+  1832→        StatusCode: http.StatusInternalServerError,
+  1833→    }
+  1834→    
+  1835→    // Domain-specific errors
+  1836→    ErrInsufficientBalance = &AppError{
+  1837→        Code:       "INSUFFICIENT_BALANCE",
+  1838→        Message:    "Wallet balance is insufficient",
+  1839→        StatusCode: http.StatusPaymentRequired,
+  1840→    }
+  1841→    
+  1842→    ErrWalletFrozen = &AppError{
+  1843→        Code:       "WALLET_FROZEN",
+  1844→        Message:    "Wallet is frozen. Contact support.",
+  1845→        StatusCode: http.StatusForbidden,
+  1846→    }
+  1847→    
+  1848→    ErrDuplicateEntry = &AppError{
+  1849→        Code:       "DUPLICATE_ENTRY",
+  1850→        Message:    "Resource already exists",
+  1851→        StatusCode: http.StatusConflict,
+  1852→    }
+  1853→)
+  1854→
+  1855→// Helper functions for creating parameterized errors
+  1856→func NewValidation(field string, message string) *AppError {
+  1857→    return &AppError{
+  1858→        Code:       "VALIDATION_ERROR",
+  1859→        Message:    fmt.Sprintf("%s: %s", field, message),
+  1860→        StatusCode: http.StatusBadRequest,
+  1861→        Details: map[string]string{
+  1862→            "field":   field,
+  1863→            "message": message,
+  1864→        },
+  1865→    }
+  1866→}
+  1867→
+  1868→func NewNotFound(resource string) *AppError {
+  1869→    return &AppError{
+  1870→        Code:       "NOT_FOUND",
+  1871→        Message:    fmt.Sprintf("%s not found", resource),
+  1872→        StatusCode: http.StatusNotFound,
+  1873→    }
+  1874→}
+  1875→B. TypeScript/React Native Standards
+  1876→typescript
+  1877→
+  1878→// libs/shared-types/api-response.ts
+  1879→// Standard API response wrapper used across all services
+  1880→
+  1881→export interface ApiResponse<T> {
+  1882→  success: boolean;
+  1883→  data?: T;
+  1884→  error?: ApiError;
+  1885→  meta?: ResponseMeta;
+  1886→}
+  1887→
+  1888→export interface ApiError {
+  1889→  code: string;
+  1890→  message: string;
+  1891→  details?: ValidationError[];
+  1892→}
+  1893→
+  1894→export interface ValidationError {
+  1895→  field: string;
+  1896→  message: string;
+  1897→}
+  1898→
+  1899→export interface ResponseMeta {
+  1900→  page?: number;
+  1901→  limit?: number;
+  1902→  total?: number;
+  1903→  hasMore?: boolean;
+  1904→}
+  1905→
+  1906→// Paginated response helper
+  1907→export interface PaginatedResponse<T> extends ApiResponse<T[]> {
+  1908→  meta: Required<ResponseMeta>;
+  1909→}
+  1910→
+  1911→// Custom error class for API errors
+  1912→export class ApiServiceError extends Error {
+  1913→  constructor(
+  1914→    public statusCode: number,
+  1915→    public errorCode: string,
+  1916→    message: string,
+  1917→    public details?: ValidationError[]
+  1918→  ) {
+  1919→    super(message);
+  1920→    this.name = 'ApiServiceError';
+  1921→  }
+  1922→}
+  1923→
+  1924→// Result type for safer error handling (inspired by Rust/Ruby)
+  1925→export type Result<T, E = ApiServiceError> =
+  1926→  | { success: true; data: T }
+  1927→  | { success: false; error: E };
+  1928→
+  1929→// Usage example:
+  1930→// async function fetchUserProfile(userId: string): Promise<Result<UserProfile>> {
+  1931→//   try {
+  1932→//     const response = await api.get(`/users/${userId}`);
+  1933→//     return { success: true, data: response.data };
+  1934→//   } catch (error) {
+  1935→//     if (error instanceof ApiServiceError) {
+  1936→//       return { success: false, error };
+  1937→//     }
+  1938→//     return { success: false, error: new ApiServiceError(500, 'UNKNOWN', 'Unexpected error') };
+  1939→//   }
+  1940→// }
+  1941→C. Git Commit Convention
+  1942→bash
+  1943→
+  1944→# Conventional Commits format enforced via commitlint
+  1945→
+  1946→# Format: <type>(<scope>): <subject>
+  1947→
+  1948→# Types:
+  1949→# feat:     New feature
+  1950→# fix:      Bug fix
+  1951→# docs:     Documentation changes
+  1952→# style:    Code style changes (formatting, semicolons, etc.)
+  1953→# refactor: Code refactoring (not a bug fix or feature)
+  1954→# perf:     Performance improvements
+  1955→# test:     Adding or updating tests
+  1956→# chore:    Build process, tooling, library updates
+  1957→# ci:       CI/CD configuration changes
+  1958→
+  1959→# Scopes (examples):
+  1960→# identity, wallet, retail, agriculture, domestic, business, medical, location, mobile, web, infra
+  1961→
+  1962→# Examples:
+  1963→# feat(identity): add NID verification flow
+  1964→# fix(wallet): resolve race condition in balance update
+  1965→# docs(api): update OpenAPI spec for location endpoints
+  1966→# style(mobile): format farmer listing screen
+  1967→# refactor(database): normalize address fields
+  1968→# perf(location): optimize PostGIS spatial index query
+  1969→# test(identity): add unit tests for role switching logic
+  1970→# chore(deps): upgrade pgx driver to v5.5
+  1971→# ci(pipeline): add security scanning stage
+  1972→9. ✅ PHASE 1 MVP CHECKLIST (FIRST 4 MONTHS)
+  1973→Month 1: Foundation
+  1974→Week 1-2: Infrastructure Setup
+  1975→ Set up AWS account with proper IAM roles
+  1976→ Configure Terraform for VPC, subnets, security groups
+  1977→ Provision RDS PostgreSQL with PostGIS extension
+  1978→ Set up ElastiCache Redis cluster
+  1979→ Create S3 buckets for media storage
+  1980→ Configure CloudFront CDN
+  1981→ Set up ECR (Elastic Container Registry) repositories
+  1982→ Configure Secrets Manager for sensitive credentials
+  1983→Week 3-4: Development Environment
+  1984→ Initialize Nx monorepo with project structure
+  1985→ Set up Go module structure for all services
+  1986→ Initialize React Native project with TypeScript
+  1987→ Configure ESLint, Prettier, and Husky pre-commit hooks
+  1988→ Set up GitLab CI/CD pipeline (basic stages)
+  1989→ Create Dockerfiles for all services
+  1990→ Write Makefile for common development commands
+  1991→ Set up local development environment (docker-compose)
+  1992→Month 2: Core Services
+  1993→Week 5-6: Identity Service
+  1994→ Implement user registration (phone + password)
+  1995→ Implement phone OTP verification (use Twilio or local SMS gateway)
+  1996→ Implement JWT authentication (access + refresh tokens)
+  1997→ Build user profile CRUD operations
+  1998→ Implement multi-role system (activate/deactivate roles)
+  1999→ Create role-specific profile schemas
+  2000→ Write unit tests (target >80% coverage)
+
+[showing lines 1-2000 of 6550; use offset=2001 with limit to continue reading]
