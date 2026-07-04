@@ -26,20 +26,23 @@ model User {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  roles        UserRole[]
-  wallet       Wallet?
-  orders       Order[]
-  reviews      Review[]
-  products     Product[]
-  services     Service[]
-  appointments Appointment[]
-  reports      MedicalReport[]
+  roles            UserRole[]
+  wallet           Wallet?
+  buyerOrders      Order[]   @relation("BuyerOrders")
+  sellerOrders     Order[]   @relation("SellerOrders")
+  reviews          Review[]
+  products         Product[]
+  services         Service[]
+  farmProducts     FarmProduct[]
+  appointments     Appointment[]
+  reports          MedicalReport[]
+  businessLocations BusinessLocation[]
 }
 
 model UserRole {
   id        String   @id @default(cuid())
   userId    String
-  role      String   // consumer, merchant, farmer, service_provider
+  role      String
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
 
@@ -51,7 +54,7 @@ model UserRole {
 model Wallet {
   id        String   @id @default(cuid())
   userId    String   @unique
-  balance   Int      @default(0) // in paisa (1 BDT = 100 paisa)
+  balance   Int      @default(0)
   isFrozen  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -61,16 +64,16 @@ model Wallet {
 }
 
 model Transaction {
-  id                    String   @id @default(cuid())
-  walletId              String
-  type                  String   // credit, debit, transfer, escrow_hold, escrow_release
-  amount                Int
-  description           String?
-  referenceType         String?  // order, service, p2p, funding
-  referenceId           String?
-  paymentMethod         String?  // bKash, Nagad, Rocket, wallet, bank
-  status                String   @default("completed") // pending, completed, failed, reversed
-  createdAt             DateTime @default(now())
+  id            String   @id @default(cuid())
+  walletId      String
+  type          String
+  amount        Int
+  description   String?
+  referenceType String?
+  referenceId   String?
+  paymentMethod String?
+  status        String   @default("completed")
+  createdAt     DateTime @default(now())
 
   wallet Wallet @relation(fields: [walletId], references: [id])
 }
@@ -83,12 +86,12 @@ model Product {
   name        String
   nameBn      String?
   description String?
-  price       Int      // in paisa
+  price       Int
   category    String
   subcategory String?
   imageUrl    String?
   stock       Int      @default(0)
-  unit        String?  // kg, piece, liter, etc.
+  unit        String?
   rating      Float    @default(0)
   reviewCount Int      @default(0)
   isActive    Boolean  @default(true)
@@ -108,26 +111,26 @@ model Review {
   comment   String?
   createdAt DateTime @default(now())
 
-  user     User     @relation(fields: [userId], references: [id])
-  product  Product? @relation(fields: [productId], references: [id])
+  user    User     @relation(fields: [userId], references: [id])
+  product Product? @relation(fields: [productId], references: [id])
 }
 
 model Order {
-  id            String   @id @default(cuid())
-  buyerId       String
-  sellerId      String
-  totalAmount   Int
-  status        String   @default("pending") // pending, confirmed, preparing, delivered, cancelled
-  paymentStatus String   @default("pending") // pending, paid, failed
-  paymentMethod String?
-  deliveryType  String?  // home_delivery, pickup, direct
+  id              String   @id @default(cuid())
+  buyerId         String
+  sellerId        String
+  totalAmount     Int
+  status          String   @default("pending")
+  paymentStatus   String   @default("pending")
+  paymentMethod   String?
+  deliveryType    String?
   deliveryAddress String?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
-  buyer   User       @relation("BuyerOrders", fields: [buyerId], references: [id])
-  seller  User       @relation("SellerOrders", fields: [sellerId], references: [id])
-  items   OrderItem[]
+  buyer  User       @relation("BuyerOrders", fields: [buyerId], references: [id])
+  seller User       @relation("SellerOrders", fields: [sellerId], references: [id])
+  items  OrderItem[]
 }
 
 model OrderItem {
@@ -167,9 +170,9 @@ model FarmProduct {
 model MarketPrice {
   id        String   @id @default(cuid())
   commodity String
-  price     Int      // per kg in paisa
+  price     Int
   unit      String   @default("kg")
-  change    Float?   // percentage change
+  change    Float?
   date      String
   market    String?
   createdAt DateTime @default(now())
@@ -178,22 +181,22 @@ model MarketPrice {
 // ============ SERVICES ============
 
 model Service {
-  id            String   @id @default(cuid())
-  providerId    String
-  name          String
-  nameBn        String?
-  description   String?
-  category      String
-  subcategory   String?
-  priceType     String   @default("fixed") // fixed, hourly, quote
-  basePrice     Int?
-  imageUrl      String?
-  rating        Float    @default(0)
-  reviewCount   Int      @default(0)
-  isAvailable   Boolean  @default(true)
-  serviceType   String?  // in_venue, at_customer, both
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id          String   @id @default(cuid())
+  providerId  String
+  name        String
+  nameBn      String?
+  description String?
+  category    String
+  subcategory String?
+  priceType   String   @default("fixed")
+  basePrice   Int?
+  imageUrl    String?
+  rating      Float    @default(0)
+  reviewCount Int      @default(0)
+  isAvailable Boolean  @default(true)
+  serviceType String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   provider User @relation(fields: [providerId], references: [id])
 }
@@ -203,7 +206,7 @@ model ServiceRequest {
   customerId    String
   providerId    String
   serviceId     String
-  status        String   @default("pending") // pending, accepted, in_progress, completed, cancelled
+  status        String   @default("pending")
   scheduledDate String?
   scheduledTime String?
   address       String?
@@ -217,46 +220,48 @@ model ServiceRequest {
 // ============ MEDICAL HUB ============
 
 model MedicalReport {
-  id            String   @id @default(cuid())
-  userId        String
-  title         String
-  reportType    String   // blood_test, xray, ultrasound, etc.
-  labName       String?
-  reportDate    String?
-  findings      String?
-  doctorName    String?
-  imageUrl      String?
-  isShared      Boolean  @default(false)
-  sharedWithId  String?
-  sharedUntil   String?
-  createdAt     DateTime @default(now())
+  id           String   @id @default(cuid())
+  userId       String
+  title        String
+  reportType   String
+  labName      String?
+  reportDate   String?
+  findings     String?
+  doctorName   String?
+  imageUrl     String?
+  isShared     Boolean  @default(false)
+  sharedWithId String?
+  sharedUntil  String?
+  createdAt    DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id])
 }
 
 model Doctor {
-  id          String   @id @default(cuid())
-  name        String
-  specialty   String
-  qualification String?
-  hospital    String?
-  city        String?
-  rating      Float    @default(0)
-  fee         Int?
-  imageUrl    String?
-  availableSlots Int   @default(0)
-  createdAt   DateTime @default(now())
+  id             String   @id @default(cuid())
+  name           String
+  specialty      String
+  qualification  String?
+  hospital       String?
+  city           String?
+  rating         Float    @default(0)
+  fee            Int?
+  imageUrl       String?
+  availableSlots Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  appointments Appointment[]
 }
 
 model Appointment {
-  id          String   @id @default(cuid())
-  userId      String
-  doctorId    String
-  date        String
-  time        String
-  status      String   @default("scheduled") // scheduled, completed, cancelled
-  notes       String?
-  createdAt   DateTime @default(now())
+  id        String   @id @default(cuid())
+  userId    String
+  doctorId  String
+  date      String
+  time      String
+  status    String   @default("scheduled")
+  notes     String?
+  createdAt DateTime @default(now())
 
   user   User   @relation(fields: [userId], references: [id])
   doctor Doctor @relation(fields: [doctorId], references: [id])
@@ -265,22 +270,22 @@ model Appointment {
 // ============ BUSINESS LOCATION ============
 
 model BusinessLocation {
-  id              String   @id @default(cuid())
-  ownerId         String
-  businessName    String
-  category        String
-  subcategories   String?  // JSON array as string
-  address         String
-  area            String?
-  city            String
-  district        String
-  division        String
-  latitude        Float?
-  longitude       Float?
-  rating          Float    @default(0)
-  isOpen          Boolean  @default(true)
-  phone           String?
-  createdAt       DateTime @default(now())
+  id            String   @id @default(cuid())
+  ownerId       String
+  businessName  String
+  category      String
+  subcategories String?
+  address       String
+  area          String?
+  city          String
+  district      String
+  division      String
+  latitude      Float?
+  longitude     Float?
+  rating        Float    @default(0)
+  isOpen        Boolean  @default(true)
+  phone         String?
+  createdAt     DateTime @default(now())
 
   owner User @relation(fields: [ownerId], references: [id])
 }
