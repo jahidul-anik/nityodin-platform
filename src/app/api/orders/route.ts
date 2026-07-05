@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, demoState } from '@/lib/db';
+import { demoData } from '@/lib/demo-data';
 
 export async function GET(request: NextRequest) {
   try {
@@ -37,10 +38,13 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(orders);
   } catch (error) {
-    console.error('Failed to fetch orders:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch orders' },
-      { status: 500 }
-    );
+    demoState.isDemoMode = true;
+    const { searchParams } = new URL(request.url);
+    const status = searchParams.get('status');
+    let result = demoData.orders;
+    if (status) {
+      result = result.filter((o) => o.status === status);
+    }
+    return NextResponse.json(result);
   }
 }

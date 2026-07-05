@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, demoState } from '@/lib/db';
+import { demoData } from '@/lib/demo-data';
 
 export async function GET() {
   try {
@@ -17,10 +18,7 @@ export async function GET() {
 
     return NextResponse.json(reports);
   } catch (error) {
-    console.error('Failed to fetch medical reports:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch medical reports' },
-      { status: 500 }
-    );
+    demoState.isDemoMode = true;
+    return NextResponse.json(demoData.medicalReports);
   }
 }

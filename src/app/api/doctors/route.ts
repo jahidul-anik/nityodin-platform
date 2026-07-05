@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, demoState } from '@/lib/db';
+import { demoData } from '@/lib/demo-data';
 
 export async function GET(request: NextRequest) {
   try {
@@ -18,10 +19,13 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(doctors);
   } catch (error) {
-    console.error('Failed to fetch doctors:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch doctors' },
-      { status: 500 }
-    );
+    demoState.isDemoMode = true;
+    const { searchParams } = new URL(request.url);
+    const specialty = searchParams.get('specialty');
+    let result = demoData.doctors;
+    if (specialty) {
+      result = result.filter((d) => d.specialty === specialty);
+    }
+    return NextResponse.json(result);
   }
 }

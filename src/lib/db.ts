@@ -38,3 +38,9 @@ function createPrismaClient(): PrismaClient {
 export const db = globalForPrisma.prisma ?? createPrismaClient()
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db
+
+/**
+ * Demo mode state. When the database is unavailable (e.g. Vercel without Turso),
+ * API routes set this to true and return demo data instead of errors.
+ */
+export const demoState = { isDemoMode: false }

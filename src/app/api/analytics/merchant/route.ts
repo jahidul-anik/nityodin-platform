@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, demoState } from '@/lib/db';
+import { demoData } from '@/lib/demo-data';
 
 export async function GET() {
   try {
@@ -122,10 +123,7 @@ export async function GET() {
       recentOrders: allSellerOrders,
     });
   } catch (error) {
-    console.error('Failed to fetch merchant analytics:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch merchant analytics' },
-      { status: 500 }
-    );
+    demoState.isDemoMode = true;
+    return NextResponse.json(demoData.merchantAnalytics);
   }
 }

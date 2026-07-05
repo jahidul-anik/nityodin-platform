@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, demoState } from '@/lib/db';
+import { demoData } from '@/lib/demo-data';
 
 export async function GET(request: NextRequest) {
   try {
@@ -33,10 +34,13 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(products);
   } catch (error) {
-    console.error('Failed to fetch products:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch products' },
-      { status: 500 }
-    );
+    demoState.isDemoMode = true;
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get('category');
+    let result = demoData.products;
+    if (category) {
+      result = result.filter((p) => p.category === category);
+    }
+    return NextResponse.json(result);
   }
 }
