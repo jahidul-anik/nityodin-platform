@@ -108,3 +108,37 @@ The Nityodin Platform web portal is **functionally complete** with all core infr
    - Add map integration for Discover section
    - Add notification system with real-time updates
    - Add search functionality to all listing views
+
+---
+Task ID: deploy-gh-vercel
+Agent: Main Orchestrator
+Task: Configure Nityodin Platform for GitHub + Vercel deployment
+
+Work Log:
+- Installed `gh` CLI (v2.8.9) and `vercel` CLI (v54.20.1)
+- No auth tokens available in sandbox — prepared project for user-side deployment
+- Installed `@prisma/adapter-libsql` (v7.8.0) and `@libsql/client` (v0.17.4) for Turso serverless DB
+- Updated `src/lib/db.ts` — auto-detects DATABASE_URL: SQLite (local) or libSQL (Turso/Vercel)
+- Created `vercel.json` — security headers, API no-cache, build command (prisma generate + next build)
+- Created `.env.example` — template for DATABASE_URL, DATABASE_AUTH_TOKEN, NEXTAUTH
+- Created `deploy.sh` — one-click deploy script: Turso DB setup → GitHub repo → Vercel deploy
+- Updated `.gitignore` — added tool-results/, download/, upload/, examples/, db/*.db, Caddyfile
+- Updated `next.config.ts` — enabled `ignoreBuildErrors: false`, `reactStrictMode: true`
+- Updated `tsconfig.json` — excluded examples/, skills/, download/, upload/, tool-results/
+- Updated `package.json` — name: nityodin-platform, postinstall: prisma generate, build: prisma generate && next build
+- Fixed `src/app/page.tsx` ErrorBoundary TypeScript error (React 19 `unknown` error type)
+- Added Prisma seed config to package.json
+- Verification: 0 TypeScript errors, 0 ESLint errors, clean commit
+
+Stage Summary:
+- Project is fully prepared for GitHub + Vercel deployment
+- Database abstraction layer supports both local SQLite and Turso (serverless)
+- Deploy script handles: Turso DB creation, GitHub repo, Vercel production deploy
+- User needs to run: `gh auth login`, `vercel login`, then `./deploy.sh`
+- Commit: `66950c6` — "feat: configure for GitHub + Vercel deployment"
+
+### Unresolved Issues for Deployment
+1. **Auth Required**: User must authenticate `gh` and `vercel` CLIs on their machine
+2. **Database**: Turso free tier recommended (500 DBs, 1B reads/mo, Singapore region)
+3. **`z-ai-web-dev-sdk`**: This package is in dependencies but may not be needed for Vercel deployment (AI features). Consider moving to optional or removing if unused.
+4. **Seed Data**: Vercel deployment won't have seed data. Need to run `prisma db push` + seed on Turso before first deploy, or add a setup wizard.
