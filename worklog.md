@@ -137,8 +137,33 @@ Stage Summary:
 - User needs to run: `gh auth login`, `vercel login`, then `./deploy.sh`
 - Commit: `66950c6` — "feat: configure for GitHub + Vercel deployment"
 
+---
+Task ID: deploy-live
+Agent: Main Orchestrator
+Task: Push to GitHub, deploy to Vercel, add demo data fallback
+
+Work Log:
+- User provided GitHub classic token (ghp_) and Vercel token (vcp_)
+- Pushed all code to https://github.com/jahidul-anik/nityodin-platform (commit 5ea817d)
+- Created Vercel project (prj_xDAr2b47uPO8Z1depGBFceevKNW4) via API
+- First deploy: landing page works, API routes return 500 (no DB on serverless)
+- Created src/lib/demo-data.ts: comprehensive Bangladesh demo data (~360 lines)
+- Modified db.ts: added `demoState.isDemoMode` mutable flag
+- Modified 15 API routes to return demo data when DB is unavailable
+- Fixed TypeScript TS2632 error (imported const vs let) — used object property pattern
+- Second deploy: ALL features work with demo data
+- Agent-browser verified: Landing ✅, Discover ✅, Wallet (৳45,600) ✅, Profile ✅, Medical ✅
+- Vercel API endpoints verified: /api/platform/stats (12847 users, 843 merchants), /api/users/me (Rahim Uddin, Dhaka), /api/products (8 items), /api/doctors (6)
+
+Stage Summary:
+- **LIVE URL**: https://nityodin-platform.vercel.app
+- **GitHub**: https://github.com/jahidul-anik/nityodin-platform
+- Full app works as demo on Vercel without any database setup
+- All 5 navigation tabs verified: Home, Discover, Wallet, Medical, Profile
+- Demo data includes realistic Bangladesh data (Taka currency, Bengali names, Dhaka/Chittagong/Sylhet locations)
+
 ### Unresolved Issues for Deployment
-1. **Auth Required**: User must authenticate `gh` and `vercel` CLIs on their machine
-2. **Database**: Turso free tier recommended (500 DBs, 1B reads/mo, Singapore region)
-3. **`z-ai-web-dev-sdk`**: This package is in dependencies but may not be needed for Vercel deployment (AI features). Consider moving to optional or removing if unused.
-4. **Seed Data**: Vercel deployment won't have seed data. Need to run `prisma db push` + seed on Turso before first deploy, or add a setup wizard.
+1. **Git-Vercel Auto-Deploy**: Vercel project not linked to GitHub repo (requires Vercel dashboard OAuth). Manual redeploy needed via CLI.
+2. **Database**: App runs in demo mode on Vercel. For persistent data, connect Turso (free): turso.tech → create DB in Singapore → set DATABASE_URL + DATABASE_AUTH_TOKEN in Vercel env.
+3. **`z-ai-web-dev-sdk`**: In dependencies but not used in deployment. Could be removed to reduce bundle size.
+4. **Production Auth**: No real authentication — uses first demo user automatically. NextAuth setup needed for production.
