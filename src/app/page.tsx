@@ -11,16 +11,17 @@ const FeaturesSection = dynamic(() => import('@/components/nityodin/features-sec
 const HowItWorksSection = dynamic(() => import('@/components/nityodin/how-it-works-section').then(m => ({ default: m.HowItWorksSection })), { ssr: false });
 const Footer = dynamic(() => import('@/components/nityodin/footer').then(m => ({ default: m.Footer })), { ssr: false });
 
-class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: Error | null}> {
-  state = { hasError: false, error: null };
-  static getDerivedStateFromError(error: Error) { return { hasError: true, error }; }
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: unknown}> {
+  state = { hasError: false, error: null as unknown };
+  static getDerivedStateFromError(error: unknown) { return { hasError: true, error }; }
   render() {
     if (this.state.hasError) {
+      const err = this.state.error instanceof Error ? this.state.error : new Error(String(this.state.error));
       return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-background p-8">
           <h1 className="text-2xl font-bold text-destructive">Something went wrong</h1>
-          <pre className="mt-4 max-w-2xl overflow-auto rounded-lg bg-muted p-4 text-sm text-muted-foreground">{this.state.error?.message}</pre>
-          <pre className="mt-2 max-w-2xl overflow-auto rounded-lg bg-muted p-4 text-xs text-muted-foreground">{this.state.error?.stack?.toString()}</pre>
+          <pre className="mt-4 max-w-2xl overflow-auto rounded-lg bg-muted p-4 text-sm text-muted-foreground">{err.message}</pre>
+          <pre className="mt-2 max-w-2xl overflow-auto rounded-lg bg-muted p-4 text-xs text-muted-foreground">{err.stack?.toString()}</pre>
           <button className="mt-4 rounded-lg bg-primary px-6 py-2 text-primary-foreground" onClick={() => this.setState({ hasError: false, error: null })}>Try Again</button>
         </div>
       );
