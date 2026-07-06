@@ -163,7 +163,31 @@ Stage Summary:
 - Demo data includes realistic Bangladesh data (Taka currency, Bengali names, Dhaka/Chittagong/Sylhet locations)
 
 ### Unresolved Issues for Deployment
-1. **Git-Vercel Auto-Deploy**: Vercel project not linked to GitHub repo (requires Vercel dashboard OAuth). Manual redeploy needed via CLI.
-2. **Database**: App runs in demo mode on Vercel. For persistent data, connect Turso (free): turso.tech → create DB in Singapore → set DATABASE_URL + DATABASE_AUTH_TOKEN in Vercel env.
-3. **`z-ai-web-dev-sdk`**: In dependencies but not used in deployment. Could be removed to reduce bundle size.
-4. **Production Auth**: No real authentication — uses first demo user automatically. NextAuth setup needed for production.
+1. **Database**: App runs in demo mode on Vercel. For persistent data, connect Turso (free): turso.tech → create DB in Singapore → set DATABASE_URL + DATABASE_AUTH_TOKEN in Vercel env.
+2. **`z-ai-web-dev-sdk`**: In dependencies but not used in deployment. Could be removed to reduce bundle size.
+3. **Production Auth**: No real authentication — uses first demo user automatically. NextAuth setup needed for production.
+
+---
+Task ID: code-review-1
+Agent: Main Orchestrator
+Task: Comprehensive code review, bug fixes, and engineering improvements
+
+Work Log:
+- Verified all 15 API endpoints return HTTP 200 on live Vercel deployment
+- Verified demo data shapes match API response formats (merchants include isOpen, itemCount, _count, etc.)
+- Found and fixed 4 bugs:
+  1. wallet/transfer: request.json() called twice (body stream already consumed) — cached body before try block
+  2. top-nav: Profile tab linked to 'dashboard' instead of 'profile' — corrected view
+  3. merchants/route.ts: catch {} missing error param but referencing it — added (error) parameter
+  4. merchants/[id]/route.ts: same catch block issue — fixed
+- Engineering improvement: Added console.error logging to all 16 API route catch blocks (was silently swallowing errors)
+- Fixed truncated sed output in 3 files (market-prices, medical-reports, merchants log messages)
+- Verification: 0 TypeScript errors, 0 ESLint errors
+- Committed: ed73188, auto-deployed via GitHub Actions
+
+Stage Summary:
+- All 15 live API endpoints verified returning 200 with correct demo data
+- No silent error swallowing — all DB failures now logged with API path context
+- Profile navigation fixed (now shows ProfileSection instead of DashboardShell)
+- Wallet transfer works in both DB and demo modes without crashes
+- Auto-deploy pipeline working: push → GitHub Actions → Vercel (~2 min)
