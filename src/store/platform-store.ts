@@ -34,7 +34,8 @@ export type ActiveView =
   | 'discover'
   | 'wallet'
   | 'medical'
-  | 'profile';
+  | 'profile'
+  | 'merchant-storefront';
 
 /** Role identifiers — a single user identity can assume multiple roles. */
 export type ActiveRole =
@@ -86,6 +87,9 @@ export interface PlatformState {
 
   // -- Medical -------------------------------------------------------------
   medicalTab: MedicalTab;
+
+  // -- Merchant Storefront -----------------------------------------------
+  selectedMerchantId: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -187,6 +191,12 @@ export interface PlatformActions {
    * @param tab - One of `'reports' | 'doctors' | 'appointments'`.
    */
   setMedicalTab: (tab: MedicalTab) => void;
+
+  /**
+   * Navigate to a specific merchant's storefront.
+   * @param merchantId - The unique store identifier.
+   */
+  navigateToMerchant: (merchantId: string) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -213,6 +223,7 @@ export const usePlatformStore = create<PlatformState & PlatformActions>()(
     discoverCategory: 'all',
     discoverRadius: 10,
     medicalTab: 'reports',
+    selectedMerchantId: null,
 
     // ── Actions ───────────────────────────────────────────────────────────
 
@@ -295,5 +306,8 @@ export const usePlatformStore = create<PlatformState & PlatformActions>()(
 
     setMedicalTab: (tab) =>
       set({ medicalTab: tab }),
+
+    navigateToMerchant: (merchantId) =>
+      set({ selectedMerchantId: merchantId, activeView: 'merchant-storefront' }),
   }),
 );

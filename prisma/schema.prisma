@@ -37,6 +37,7 @@ model User {
   appointments     Appointment[]
   reports          MedicalReport[]
   businessLocations BusinessLocation[]
+  stores           Store[]   @relation("StoreOwner")
 }
 
 model UserRole {
@@ -101,6 +102,8 @@ model Product {
   seller  User    @relation(fields: [sellerId], references: [id])
   reviews Review[]
   orders  OrderItem[]
+  storeId String?
+  store   Store?  @relation(fields: [storeId], references: [id])
 }
 
 model Review {
@@ -165,6 +168,8 @@ model FarmProduct {
   updatedAt   DateTime @updatedAt
 
   farmer User @relation(fields: [farmerId], references: [id])
+  storeId String?
+  store   Store?  @relation(fields: [storeId], references: [id])
 }
 
 model MarketPrice {
@@ -199,6 +204,8 @@ model Service {
   updatedAt   DateTime @updatedAt
 
   provider User @relation(fields: [providerId], references: [id])
+  storeId String?
+  store   Store?  @relation(fields: [storeId], references: [id])
 }
 
 model ServiceRequest {
@@ -288,4 +295,64 @@ model BusinessLocation {
   createdAt     DateTime @default(now())
 
   owner User @relation(fields: [ownerId], references: [id])
+  storeId String?
+  store   Store?  @relation(fields: [storeId], references: [id])
+}
+
+// ============ MERCHANT STOREFRONT ============
+
+model Store {
+  id              String   @id @default(cuid())
+  ownerId         String
+  name            String
+  nameBn          String?
+  slug            String   @unique
+  description     String?
+  logoUrl         String?
+  bannerUrl       String?
+  category        String
+  subcategories   String?
+  tags            String?
+  isVerified      Boolean  @default(false)
+  isLive          Boolean  @default(false)
+  rating          Float    @default(0)
+  totalSales      Int      @default(0)
+  totalReviews    Int      @default(0)
+  website         String?
+  phone           String?
+  email           String?
+  address         String?
+  city            String?
+  district        String?
+  division        String?
+  latitude        Float?
+  longitude       Float?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  owner            User              @relation(fields: [ownerId], references: [id], name: "StoreOwner")
+  locations        BusinessLocation[]
+  inventoryItems   InventorySync[]
+  products         Product[]
+  farmProducts     FarmProduct[]
+  services         Service[]
+}
+
+model InventorySync {
+  id              String   @id @default(cuid())
+  storeId         String
+  entityType      String   // "product" | "farm_product" | "service"
+  entityId        String
+  sku             String?
+  stock           Int      @default(0)
+  reserved        Int      @default(0)
+  price           Int
+  syncSource      String   @default("manual")  // "pos" | "manual" | "api"
+  lastSyncedAt    DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  store Store @relation(fields: [storeId], references: [id])
+
+  @@unique([storeId, entityType, entityId])
 }

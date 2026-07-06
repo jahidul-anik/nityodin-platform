@@ -47,6 +47,9 @@ export default function Home() {
   const [MedicalView, setMedicalView] = useState<React.ComponentType | null>(null);
   const [ProfileView, setProfileView] = useState<React.ComponentType | null>(null);
   const [CartComp, setCartComp] = useState<React.ComponentType | null>(null);
+  const [MerchantStorefrontView, setMerchantStorefrontView] = useState<React.ComponentType<{merchantId: string}> | null>(null);
+
+  const selectedMerchantId = usePlatformStore((s) => s.selectedMerchantId);
 
   useEffect(() => {
     if (isAuthenticated) return;
@@ -65,6 +68,7 @@ export default function Home() {
     setExtraLoaded(true);
     Promise.all([
       import('@/components/nityodin/cart-drawer').then(m => setCartComp(() => m.CartDrawer)),
+      import('@/components/nityodin/merchant-storefront').then(m => setMerchantStorefrontView(() => m.MerchantStorefront)),
       import('@/components/nityodin/dashboard-shell').then(m => setDashView(() => m.DashboardShell)),
       import('@/components/nityodin/discover-section').then(m => setDiscoverView(() => m.DiscoverSection)),
       import('@/components/nityodin/wallet-section').then(m => setWalletView(() => m.WalletSection)),
@@ -87,6 +91,7 @@ export default function Home() {
           {activeView === 'wallet' && (WalletView ? <div className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 lg:px-8"><WalletView /></div> : <Spinner />)}
           {activeView === 'medical' && (MedicalView ? <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"><MedicalView /></div> : <Spinner />)}
           {activeView === 'profile' && (ProfileView ? <div className="mx-auto w-full max-w-4xl px-4 py-6 sm:px-6 lg:px-8"><ProfileView /></div> : <Spinner />)}
+          {activeView === 'merchant-storefront' && selectedMerchantId && (MerchantStorefrontView ? <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"><MerchantStorefrontView merchantId={selectedMerchantId} /></div> : <Spinner />)}
         </main>
         <Footer />
       </div>
