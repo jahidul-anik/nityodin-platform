@@ -22,6 +22,7 @@ export async function GET() {
 
     return NextResponse.json(marketPrices);
   } catch (error) {
+    console.error('[market-prices] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.marketPrices);
   }

@@ -100,7 +100,8 @@ export async function GET(
       lowStockItems,
       liveInventoryCount,
     });
-  } catch {
+  } catch (error) {
+    console.error('[merchants/:id] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.merchantDetail);
   }

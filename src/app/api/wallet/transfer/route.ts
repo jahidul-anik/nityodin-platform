@@ -3,24 +3,24 @@ import { db, demoState } from '@/lib/db';
 import { demoData } from '@/lib/demo-data';
 
 export async function POST(request: NextRequest) {
+  // Cache body early — request.json() can only be consumed once
+  let body: { amount?: number; toPhone?: string };
   try {
-    const body = await request.json();
-    const { amount, toPhone } = body;
+    body = await request.json();
+  } catch (error) {
+    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  }
+  const { amount, toPhone } = body;
 
-    if (!amount || amount <= 0) {
-      return NextResponse.json(
-        { error: 'Invalid transfer amount' },
-        { status: 400 }
-      );
-    }
+  if (!amount || amount <= 0) {
+    return NextResponse.json({ error: 'Invalid transfer amount' }, { status: 400 });
+  }
 
-    if (!toPhone) {
-      return NextResponse.json(
-        { error: 'Recipient phone number is required' },
-        { status: 400 }
-      );
-    }
+  if (!toPhone) {
+    return NextResponse.json({ error: 'Recipient phone number is required' }, { status: 400 });
+  }
 
+  try {
     // Get demo user (sender)
     const users = await db.user.findMany({
       take: 1,
@@ -28,24 +28,15 @@ export async function POST(request: NextRequest) {
     });
     const sender = users[0];
     if (!sender || !sender.wallet) {
-      return NextResponse.json(
-        { error: 'Sender wallet not found' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Sender wallet not found' }, { status: 400 });
     }
 
     if (sender.wallet.isFrozen) {
-      return NextResponse.json(
-        { error: 'Wallet is frozen' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Wallet is frozen' }, { status: 400 });
     }
 
     if (sender.wallet.balance < amount) {
-      return NextResponse.json(
-        { error: 'Insufficient balance' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Insufficient balance' }, { status: 400 });
     }
 
     // Find recipient by phone
@@ -55,17 +46,11 @@ export async function POST(request: NextRequest) {
     });
 
     if (!recipient) {
-      return NextResponse.json(
-        { error: 'Recipient not found' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Recipient not found' }, { status: 400 });
     }
 
     if (recipient.id === sender.id) {
-      return NextResponse.json(
-        { error: 'Cannot transfer to yourself' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Cannot transfer to yourself' }, { status: 400 });
     }
 
     // Ensure recipient has a wallet
@@ -131,15 +116,8 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    console.error('[wallet/transfer] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
-    const body = await request.json().catch(() => ({}));
-    const { amount, toPhone } = body as { amount?: number; toPhone?: string };
-    if (!amount || amount <= 0) {
-      return NextResponse.json({ error: 'Invalid transfer amount' }, { status: 400 });
-    }
-    if (!toPhone) {
-      return NextResponse.json({ error: 'Recipient phone number is required' }, { status: 400 });
-    }
     return NextResponse.json({
       success: true,
       message: `Successfully transferred ৳${amount} to ${toPhone}`,

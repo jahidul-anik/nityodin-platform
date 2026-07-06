@@ -55,7 +55,7 @@ const NAV_TABS: NavTab[] = [
   { label: 'Discover', view: 'discover', icon: <Compass className="size-4" /> },
   { label: 'Wallet', view: 'wallet', icon: <Wallet className="size-4" /> },
   { label: 'Medical', view: 'medical', icon: <HeartPulse className="size-4" /> },
-  { label: 'Profile', view: 'dashboard', icon: <UserCircle className="size-4" /> },
+  { label: 'Profile', view: 'profile', icon: <UserCircle className="size-4" /> },
 ];
 
 interface RoleConfig {

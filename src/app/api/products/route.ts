@@ -34,6 +34,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(products);
   } catch (error) {
+    console.error('[products] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');

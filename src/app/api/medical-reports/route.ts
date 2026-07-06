@@ -18,6 +18,7 @@ export async function GET() {
 
     return NextResponse.json(reports);
   } catch (error) {
+    console.error('[medical-reports] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.medicalReports);
   }

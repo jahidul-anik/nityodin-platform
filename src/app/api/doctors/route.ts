@@ -19,6 +19,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(doctors);
   } catch (error) {
+    console.error('[doctors] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     const { searchParams } = new URL(request.url);
     const specialty = searchParams.get('specialty');

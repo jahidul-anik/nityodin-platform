@@ -33,6 +33,7 @@ export async function GET() {
 
     return NextResponse.json(enriched);
   } catch (error) {
+    console.error('[service-requests] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.serviceRequests);
   }

@@ -16,6 +16,7 @@ export async function GET() {
 
     return NextResponse.json(farmProducts);
   } catch (error) {
+    console.error('[farm-products] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.farmProducts);
   }

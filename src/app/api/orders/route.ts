@@ -38,6 +38,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(orders);
   } catch (error) {
+    console.error('[orders] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');

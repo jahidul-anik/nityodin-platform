@@ -31,6 +31,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(locationsWithDistance);
   } catch (error) {
+    console.error('[discover] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');

@@ -21,6 +21,7 @@ export async function GET() {
 
     return NextResponse.json(appointments);
   } catch (error) {
+    console.error('[appointments] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.appointments);
   }

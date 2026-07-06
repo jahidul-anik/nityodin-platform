@@ -84,7 +84,8 @@ export async function GET(request: NextRequest) {
     });
 
     return NextResponse.json(enriched);
-  } catch {
+  } catch (error) {
+    console.error('[merchants] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');

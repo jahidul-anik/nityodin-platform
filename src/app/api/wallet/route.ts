@@ -38,6 +38,7 @@ export async function GET() {
       transactions: user.wallet.transactions,
     });
   } catch (error) {
+    console.error('[wallet] DB error, using demo fallback:', error);
     demoState.isDemoMode = true;
     return NextResponse.json(demoData.wallet);
   }
