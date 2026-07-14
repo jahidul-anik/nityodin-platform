@@ -191,3 +191,73 @@ Stage Summary:
 - Profile navigation fixed (now shows ProfileSection instead of DashboardShell)
 - Wallet transfer works in both DB and demo modes without crashes
 - Auto-deploy pipeline working: push → GitHub Actions → Vercel (~2 min)
+
+---
+Task ID: merchant-map-view
+Agent: Main Orchestrator
+Task: Add Map view toggle to Browse Merchants tab in Discover section
+
+Work Log:
+- Read discover-section.tsx, map-view.tsx, platform-store.ts to understand existing architecture
+- Confirmed MapView component already supports merchantData (Record<string, MerchantPinData>) and showMerchantPins props
+- Confirmed all 6 demo merchants have latitude/longitude fields (Dhaka, Chittagong, Rajshahi, Sylhet, Khulna)
+- Added latitude/longitude to Merchant interface in discover-section.tsx
+- Added merchantViewMode state ('list' | 'map') and selectedMerchantOnMap state
+- Added merchantMapLocations useMemo that converts filteredMerchants to BusinessLocationMapItem[]
+- Added merchantPinDataMap useMemo that builds Record<string, MerchantPinData> for rich pins
+- Created List/Map toggle button group next to merchant category filters (icons: LayoutList, Map)
+- Map view renders MapView component with OpenStreetMap iframe + interactive pin overlay
+- Below map: quick-list of merchant cards (2-col grid) with store icon, name, Bengali name, verified badge, live indicator, rating, item count
+- Clicking a merchant in the quick-list highlights the row (emerald ring + bg) and selects the pin on the map
+- Clicking a pin on the map shows a popup card with store name, Bengali name, category, open/closed status, address, rating, sales count
+- Fixed TypeScript TS2350 error: Map constructor conflicted with import; changed to Record<string, MerchantPinData>
+- Updated map-view.tsx: changed merchantData prop type from Map to Record, updated .get() to bracket access
+- Fixed CI/CD pipeline: GitHub Actions was using npm but project uses bun (bun.lock)
+  - Changed .github/workflows/deploy.yml to use oven-sh/setup-bun@v2
+- Fixed Vercel build failure: mini-services/realtime-service/index.ts imports socket.io (not in main deps)
+  - Added "mini-services" to tsconfig.json exclude list
+- All changes committed and pushed: 3 commits (map feature, CI fix, tsconfig fix)
+- GitHub Actions deployment: SUCCESS (SHA 9b9cc37)
+
+Stage Summary:
+- **Map view in Browse Merchants tab: VERIFIED** via agent-browser on live Vercel deployment
+- List/Map toggle buttons render correctly (visible at 1280px viewport)
+- Map shows OpenStreetMap iframe with merchant pins across Bangladesh
+- Quick-list below map shows 5 merchants with Bengali names, ratings, live badges
+- Pin click popup cards work (FreshMart Grocery popup confirmed)
+- List view toggle returns to card grid with Visit Storefront buttons
+- Zero JavaScript console errors during testing
+- TypeScript: 0 errors, ESLint: 0 warnings
+- CI/CD pipeline fixed: now uses bun, deploys successfully
+- Vercel build fixed: mini-services excluded from TypeScript compilation
+
+## Current Project Status
+
+### Assessment
+The Nityodin Platform is **fully deployed and functional** at https://nityodin-platform.vercel.app. The CI/CD pipeline is now working correctly with bun. All major features are operational with demo data. The Map view for Browse Merchants has been added as requested, matching the pattern used in Browse Businesses.
+
+### What Was Built This Session
+1. **Merchant Map View**: List/Map toggle in Browse Merchants tab with OpenStreetMap integration, interactive pins, popup cards, and quick-list
+2. **CI/CD Fix**: Migrated GitHub Actions from npm to bun
+3. **Build Fix**: Excluded mini-services from TypeScript compilation
+
+### Verification Results
+- TypeScript: 0 errors
+- ESLint: 0 errors/warnings
+- Agent-browser verified: Landing ✅, Discover/Businesses ✅, Discover/Merchants/List ✅, Discover/Merchants/Map ✅, merchant pin popup ✅, list toggle ✅, zero JS errors
+- Vercel: auto-deploy from GitHub Actions working
+- webDevReview cron job: CREATED (job ID: 270434, every 15 minutes, priority 10)
+
+### Unresolved Issues & Risks
+1. **CleanPro Home Services hidden**: isLive=false means it's filtered out by the `isLive=true` query param. Only 5 of 6 merchants show. (Low priority - correct behavior for "live" filtering)
+2. **Local dev server**: Sandbox 4GB RAM limitation causes dev server to crash when compiling all components via Turbopack. Workaround: use `--webpack` mode with `-H 127.0.0.1` for Caddy gateway. Production build on Vercel works fine.
+3. **No persistent DB on Vercel**: Still in demo mode. For production data, connect Turso (free tier).
+4. **Priority Recommendations for Next Phase**:
+   - Add more interactivity: clicking a merchant in the map quick-list could navigate to storefront
+   - Add category filtering on map (only show selected category pins)
+   - Add city filter dropdown for merchants
+   - Generate real product/service images via image-generation skill
+   - Add order placement flow
+   - Add notification system with real-time updates
+   - Add dark mode toggle to TopNav
+   - Add search functionality to all listing views
