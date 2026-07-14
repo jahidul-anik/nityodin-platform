@@ -49,7 +49,7 @@ interface MapViewProps {
   selectedId?: string | null;
   onSelectLocation?: (id: string) => void;
   /** Extra merchant data to render richer pins */
-  merchantData?: Map<string, MerchantPinData>;
+  merchantData?: Record<string, MerchantPinData>;
   /** Whether to render the interactive pin overlay */
   showMerchantPins?: boolean;
 }
@@ -162,7 +162,7 @@ interface PinOverlayProps {
   bbox: BBox;
   selectedId: string | null;
   onSelectLocation: (id: string) => void;
-  merchantData?: Map<string, MerchantPinData>;
+  merchantData?: Record<string, MerchantPinData>;
 }
 
 function PinOverlay({ locations, bbox, selectedId, onSelectLocation, merchantData }: PinOverlayProps) {
@@ -176,7 +176,7 @@ function PinOverlay({ locations, bbox, selectedId, onSelectLocation, merchantDat
     <div className="absolute inset-0 pointer-events-none z-10">
       {validLocs.map((loc) => {
         const pos = projectToPercent(loc.latitude!, loc.longitude!, bbox);
-        const mData = merchantData?.get(loc.id);
+        const mData = merchantData?.[loc.id];
         const pinColor = getPinColor(loc.category);
         const isSelected = loc.id === selectedId;
         const isHovered = loc.id === hoveredId;

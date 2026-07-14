@@ -16,7 +16,10 @@ import {
   Radio,
   TrendingUp,
   Package,
+  LayoutList,
+  Map,
 } from 'lucide-react';
+import { MapView, type BusinessLocationMapItem, type MerchantPinData } from './map-view';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -76,6 +79,8 @@ interface Merchant {
   totalSales: number;
   totalReviews: number;
   city?: string;
+  latitude?: number | null;
+  longitude?: number | null;
   owner: BusinessOwner;
   isOpen: boolean;
   openLocationCount: number;
@@ -316,6 +321,8 @@ export function DiscoverSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [merchantCategory, setMerchantCategory] = useState('All');
   const [merchantSort, setMerchantSort] = useState('rating');
+  const [merchantViewMode, setMerchantViewMode] = useState<'list' | 'map'>('list');
+  const [selectedMerchantOnMap, setSelectedMerchantOnMap] = useState<string | null>(null);
 
   const { discoverCategory, setDiscoverCategory, discoverRadius, setDiscoverRadius, navigateToMerchant } =
     usePlatformStore();
@@ -402,6 +409,45 @@ export function DiscoverSection() {
       .sort((a, b) => b.rating - a.rating)
       .slice(0, 3);
   }, [businesses]);
+
+  // -- Map data for merchants ------------------------------------------------
+
+  const DAKHA_CENTER: [number, number] = [23.8103, 90.4125];
+
+  const merchantMapLocations = useMemo((): BusinessLocationMapItem[] => {
+    return filteredMerchants
+      .filter((m) => m.latitude != null && m.longitude != null)
+      .map((m) => ({
+        id: m.id,
+        businessName: m.name,
+        category: m.category,
+        address: m.primaryLocation || '',
+        area: undefined,
+        city: m.city || '',
+        district: '',
+        division: '',
+        latitude: m.latitude as number,
+        longitude: m.longitude as number,
+        rating: m.rating,
+        isOpen: m.isOpen,
+        phone: undefined,
+      }));
+  }, [filteredMerchants]);
+
+  const merchantPinDataMap = useMemo((): Record<string, MerchantPinData> => {
+    const pinMap: Record<string, MerchantPinData> = {};
+    filteredMerchants.forEach((m) => {
+      pinMap[m.id] = {
+        storeId: m.id,
+        storeName: m.name,
+        storeNameBn: m.nameBn,
+        isVerified: m.isVerified,
+        isLive: m.isLive,
+        totalSales: m.totalSales,
+      };
+    });
+    return pinMap;
+  }, [filteredMerchants]);
 
   // -- Skeleton -----------------------------------------------------------
 
@@ -597,21 +643,49 @@ export function DiscoverSection() {
             transition={{ duration: 0.2 }}
             className="space-y-6"
           >
-            {/* Merchant Category Filters */}
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
-              {MERCHANT_CATEGORIES.map((cat) => (
+            {/* Merchant Category Filters + View Toggle */}
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none flex-1">
+                {MERCHANT_CATEGORIES.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setMerchantCategory(cat)}
+                    className={`shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                      merchantCategory === cat
+                        ? 'bg-primary text-primary-foreground'
+                        : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* List / Map toggle */}
+              <div className="flex shrink-0 items-center rounded-lg bg-muted p-0.5">
                 <button
-                  key={cat}
-                  onClick={() => setMerchantCategory(cat)}
-                  className={`shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                    merchantCategory === cat
-                      ? 'bg-primary text-primary-foreground'
-                      : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground'
+                  onClick={() => setMerchantViewMode('list')}
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                    merchantViewMode === 'list'
+                      ? 'bg-background text-foreground shadow-sm'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
-                  {cat}
+                  <LayoutList className="size-3.5" />
+                  <span className="hidden sm:inline">List</span>
                 </button>
-              ))}
+                <button
+                  onClick={() => setMerchantViewMode('map')}
+                  className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                    merchantViewMode === 'map'
+                      ? 'bg-background text-foreground shadow-sm'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <Map className="size-3.5" />
+                  <span className="hidden sm:inline">Map</span>
+                </button>
+              </div>
             </div>
 
             {loadingMerch ? (
@@ -630,7 +704,75 @@ export function DiscoverSection() {
                   </p>
                 </CardContent>
               </Card>
+            ) : merchantViewMode === 'map' ? (
+              /* ── Map View ──────────────────────────────────────────── */
+              <div>
+                <div className="mb-3 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold">
+                    {merchantCategory === 'All' ? 'All Merchants' : merchantCategory}
+                  </h3>
+                  <span className="text-sm text-muted-foreground">
+                    {merchantMapLocations.length} on map
+                  </span>
+                </div>
+                <MapView
+                  locations={merchantMapLocations}
+                  center={DAKHA_CENTER}
+                  selectedId={selectedMerchantOnMap}
+                  onSelectLocation={(id) => setSelectedMerchantOnMap(id)}
+                  merchantData={merchantPinDataMap}
+                  showMerchantPins={true}
+                />
+                {/* Merchant quick-list below the map */}
+                <div className="mt-4 space-y-2">
+                  <h4 className="text-sm font-semibold text-muted-foreground">
+                    {filteredMerchants.length} merchant{filteredMerchants.length !== 1 ? 's' : ''}
+                    {merchantCategory !== 'All' ? ` in ${merchantCategory}` : ''}
+                  </h4>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {filteredMerchants.map((m) => (
+                      <div
+                        key={m.id}
+                        onClick={() => {
+                          setSelectedMerchantOnMap(
+                            selectedMerchantOnMap === m.id ? null : m.id,
+                          );
+                        }}
+                        className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-all hover:shadow-sm ${
+                          selectedMerchantOnMap === m.id
+                            ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 ring-1 ring-emerald-500/30'
+                            : 'border-border bg-card'
+                        }`}
+                      >
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+                          <Store className="size-4" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-1.5">
+                            <p className="truncate text-sm font-semibold">{m.name}</p>
+                            {m.isVerified && <ShieldCheck className="size-3.5 shrink-0 text-emerald-500" />}
+                            {m.isLive && (
+                              <Badge className="h-4 gap-0.5 bg-green-500 px-1 text-[9px] text-white">
+                                <Radio className="size-2.5" /> Live
+                              </Badge>
+                            )}
+                          </div>
+                          <p className="truncate text-xs text-muted-foreground">{m.primaryLocation}</p>
+                        </div>
+                        <div className="shrink-0 text-right">
+                          <div className="flex items-center gap-0.5">
+                            <Star className="size-3 fill-amber-400 text-amber-400" />
+                            <span className="text-xs font-medium">{m.rating.toFixed(1)}</span>
+                          </div>
+                          <p className="text-[10px] text-muted-foreground">{m.itemCount} items</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ) : (
+              /* ── List View ──────────────────────────────────────────── */
               <div>
                 <div className="mb-3 flex items-center justify-between">
                   <h3 className="text-lg font-semibold">
