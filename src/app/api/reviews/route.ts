@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import { db } from '@/lib/db';
 import { error, created, paginated } from '@/lib/api-response';
-import { validateBody, validateQuery, paginationSchema } from '@/lib/middleware';
+import { validateBody, validateQuery, paginationSchema, requireJsonContentType } from '@/lib/middleware';
 import { handleApiError } from '@/lib/api-error-handler';
 import { NotFoundError } from '@/lib/errors';
 import { z } from 'zod';
@@ -56,6 +56,9 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body: unknown = await request.json();
     const data = validateBody<CreateReviewInput>(createReviewSchema, body);
 

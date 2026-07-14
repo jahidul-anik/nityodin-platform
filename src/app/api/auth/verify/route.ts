@@ -4,6 +4,7 @@ import { db } from '@/lib/db';
 import { success, error } from '@/lib/api-response';
 import { handleApiError } from '@/lib/api-error-handler';
 import { NotFoundError } from '@/lib/errors';
+import { requireJsonContentType } from '@/lib/middleware';
 
 const verifySchema = z.object({
   phone: z
@@ -16,6 +17,9 @@ const verifySchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body = await request.json();
     const parsed = verifySchema.safeParse(body);
 

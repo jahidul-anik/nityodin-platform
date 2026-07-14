@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { success, error } from '@/lib/api-response';
+import { requireJsonContentType } from '@/lib/middleware';
 
 const phoneSchema = z.object({
   phone: z
@@ -11,6 +12,9 @@ const phoneSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body = await request.json();
     const parsed = phoneSchema.safeParse(body);
 

@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db, demoState } from '@/lib/db';
 import { demoData } from '@/lib/demo-data';
+import { requireJsonContentType } from '@/lib/middleware';
 
 export async function POST(request: NextRequest) {
   // Cache body early — request.json() can only be consumed once
   let body: { amount?: number; toPhone?: string };
+
+  const ctCheck = requireJsonContentType(request);
+  if (ctCheck) return ctCheck;
+
   try {
     body = await request.json();
   } catch (error) {

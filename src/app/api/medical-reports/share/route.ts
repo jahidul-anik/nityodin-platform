@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
+import { requireJsonContentType } from '@/lib/middleware';
 
 // In-memory store for active shares (since the schema only has single share fields on MedicalReport)
 // This extends the schema functionality to support multiple active shares
@@ -33,6 +34,9 @@ export async function GET() {
 // POST /api/medical-reports/share — share a report with a doctor
 export async function POST(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body = await request.json();
     const { reportId, doctorId, expiryHours } = body;
 
@@ -109,6 +113,9 @@ export async function POST(request: NextRequest) {
 // DELETE /api/medical-reports/share — revoke access
 export async function DELETE(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body = await request.json();
     const { shareId } = body;
 

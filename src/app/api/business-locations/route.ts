@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 import { db } from '@/lib/db';
 import { success, paginated, created } from '@/lib/api-response';
 import { handleApiError } from '@/lib/api-error-handler';
-import { validateBody, paginationSchema } from '@/lib/middleware';
+import { validateBody, paginationSchema, requireJsonContentType } from '@/lib/middleware';
 import { z } from 'zod';
 
 // ---------------------------------------------------------------------------
@@ -118,6 +118,9 @@ const createLocationSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const body = validateBody(createLocationSchema, await request.json());
 
     // Use first user as owner for demo (no real auth)

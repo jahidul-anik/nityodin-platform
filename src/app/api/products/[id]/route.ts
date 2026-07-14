@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import { db } from '@/lib/db';
 import { success, error, noContent } from '@/lib/api-response';
-import { validateBody } from '@/lib/middleware';
+import { validateBody, requireJsonContentType } from '@/lib/middleware';
 import { AppError, NotFoundError, ValidationError, ForbiddenError } from '@/lib/errors';
 import { z } from 'zod';
 
@@ -54,6 +54,9 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
 
 export async function PUT(request: NextRequest, { params }: RouteParams) {
   try {
+    const ctCheck = requireJsonContentType(request);
+    if (ctCheck) return ctCheck;
+
     const { id } = await params;
     const body: unknown = await request.json();
     const data = validateBody<UpdateProductInput>(updateProductSchema, body);
